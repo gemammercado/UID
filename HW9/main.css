@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    color: #333;
+  }
+  
+  header {
+    padding: 1rem 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: black;
+  }
+
+  h2 { 
+    padding-left: 40px;
+  }
+  
+  nav {
+    margin-top: 1rem;
+    background-color: black;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  
+  .start-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .special-gothic {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .next-lesson-container {
+    padding: 20px;
+    margin-top: 3rem;
+    text-align: right;
+    width: 100%;
+    max-width: 800px;
+    }
+
+    .next-lesson-button {
+        background-color: black;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .next-lesson-button:hover {
+        background-color: white;
+        color: black;
+    }
+    .color {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 10px;
+        border: 2px solid #333;
+      }
+    #color-circles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .primary.red { background-color: red; }
+    .primary.blue { background-color: blue; }
+    .primary.yellow { background-color: yellow; }
+
+    .secondary.green { background-color: green; }
+    .secondary.orange { background-color: orange; }
+    .secondary.purple { background-color: purple; }
+
+    .tertiary.red-orange { background-color: #ff5349; }
+    .tertiary.yellow-green { background-color: #9acd32; }
+    .tertiary.blue-purple { background-color: #8a2be2; }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .content{ 
+        text-align: center;
+        align-items: center;
+        padding: 40px;
+    }
