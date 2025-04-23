@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Question 1</title>
-  <link rel="stylesheet" href="main.css">
+  <title>Color Mixing Game</title>
+  <link rel="stylesheet" href="/static/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-
 </head>
-<body class ="special-gothic">
+<body class="special-gothic">
     <header>
         <h1>Color Theory 101</h1>
         <nav>
-        <a href="#">Home</a>
-        <a href="#">Lessons</a>
-        <a href="#">Quiz</a>
-        <a href="#">Games</a>
-        <a href="#">Palette</a>
-        <a href="#">About</a>
+          <a href="/home.html">Home</a>
+          <a href="/lessons.html">Lessons</a>
+          <a href="/quiz1.html">Quiz</a>
+          <a href="/mixing-game.html">Games</a>
+          <a href="#">Palette</a>
+          <a href="#">About</a>
         </nav>
     </header>
-    <div class = "content">
+    <div class="content">
         <h1>Match the Target Color</h1>
         <main class="mixing-game-container">
             <section class="mix-display">
@@ -34,7 +33,7 @@
                   <div class="color-box current-color"></div>
                   <p>Your Mix</p>
                 </div>
-              </section>
+            </section>
             
             <section class="pigment-options">
               <h2>Select Pigments</h2>
@@ -55,9 +54,11 @@
                 <button class="pigment black" data-color="black"></button>
               </div>
             </section>
-            </main>
-    </div>
+        </main>
 
-       
+        <div class="next-lesson-container special-gothic">
+            <a href="/home.html" class="next-lesson-button">Return to Home</a>
+        </div>
+    </div>
 </body>
 </html>
