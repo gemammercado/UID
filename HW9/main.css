@@ -1,16 +1,19 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: white;
     color: #333;
+    font-size: 1.5rem;
   }
   
   header {
     padding: 1rem 2rem;
   }
   
+  section{ 
+    padding:20px;
+  }
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
     color: black;
   }
@@ -86,39 +89,13 @@ body {
         text-decoration: none;
         font-weight: bold;
         transition: background-color 0.3s ease;
+        font-size: 1rem;
     }
 
     .next-lesson-button:hover {
         background-color: white;
         color: black;
     }
-    .color {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 10px;
-        border: 2px solid #333;
-      }
-    #color-circles {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-    }
-
-    .primary.red { background-color: red; }
-    .primary.blue { background-color: blue; }
-    .primary.yellow { background-color: yellow; }
-
-    .secondary.green { background-color: green; }
-    .secondary.orange { background-color: orange; }
-    .secondary.purple { background-color: purple; }
-
-    .tertiary.red-orange { background-color: #ff5349; }
-    .tertiary.yellow-green { background-color: #9acd32; }
-    .tertiary.blue-purple { background-color: #8a2be2; }
 
     footer {
       margin-top: 2rem;
@@ -131,3 +108,235 @@ body {
         align-items: center;
         padding: 40px;
     }
+
+    .caption {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: #333;
+    }
+    @media (min-width: 768px) {
+      .image-row {
+        display: flex;
+        gap: 1rem; /*adds space btwn imgs*/
+        align-items: flex-start;
+      }
+      .image-col {
+        flex: 1;
+      }
+      .image-col img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+
+    /* COLOR CIRCLES*/
+    .color {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 10px;
+      border: 2px solid #333;
+    }
+    #color-circles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .color.primary.red { background-color: red; }
+    .color.primary.blue { background-color: blue; }
+    .color.primary.yellow { background-color: yellow; }
+
+    .color.secondary.green { background-color: green; }
+    .color.secondary.orange { background-color: orange; }
+    .color.secondary.purple { background-color: purple; }
+
+    .color.tertiary.yellow-green { background-color: #65c02c; }
+    .color.tertiary.blue-green { background-color: #0f715d; }
+
+    /* RED SPECTRUM*/
+    .value-spectrum {
+      display: flex;
+      justify-content: center; 
+      margin-top: 1rem;
+      gap: 6px; 
+    }
+  
+    .value-box {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+  
+    .value-1 { background-color: #3b0000; } 
+    .value-2 { background-color: #600000; }
+    .value-3 { background-color: #800000; }
+    .value-4 { background-color: #a00000; }
+    .value-5 { background-color: #c00000; } 
+    .value-6 { background-color: #e00000; }
+    .value-7 { background-color: #f55a5a; }
+    .value-8 { background-color: #fca3a3; }
+    .value-9 { background-color: #ffe5e5; } 
+
+    /*STYLING FOR Q1*/
+    .vibrant-red {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 8px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .color-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .color-choice {
+      width: 175px;
+      height: 40px;
+      border: none;
+      border-radius: 6px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+    }
+    
+    .color-choice:hover {
+      background-color: white;
+      color: black;
+    }
+
+
+
+    /*COLOR WHEEL*/
+    .color-wheel-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    
+    .color-wheel {
+      width: 500px;
+      height: 500px;
+      overflow: visible;
+      padding: 40px;
+    }
+    
+    .color-slice {
+      stroke: white;
+      stroke-width: 1;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .color-slice:hover {
+      transform: scale(1.1);
+    }
+    .highlight {
+      stroke: black;
+      stroke-width: 3;
+    }
+    
+    .red { fill: red; }
+    .redorange { fill: #ff5349; }
+    .orange { fill: orange; }
+    .yelloworange { fill: #ffae42; }
+    .yellow { fill: yellow; }
+    .yellowgreen { fill: #9acd32; }
+    .green { fill: green; }
+    .bluegreen { fill: #0d98ba; }
+    .blue { fill: blue; }
+    .blueviolet { fill: #8a2be2; }
+    .purple { fill: purple; }
+    .redviolet { fill: #c71585; }
+    
+
+    /*COLOR MIXER STYLING*/
+    .mixing-game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    
+    .mix-display {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+    
+    .color-box-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .color-box {
+      width: 150px;
+      height: 150px;
+      border: 3px solid black;
+      border-radius: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .target-color {
+      background-color: #cd2be2; 
+      color: white;
+    }
+    
+    .current-color {
+      background-color: white;
+    }
+    
+    .pigment-options {
+      text-align: center;
+    }
+    
+    .pigments-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 50px);
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .pigment {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .pigment:hover {
+      transform: scale(1.1);
+    }
+    
+    .red { background-color: red; }
+    .redorange { background-color: #fb3b00; }
+    .orange { background-color: orange; }
+    .yelloworange { background-color: rgb(255, 196, 0); }
+    .yellow { background-color: yellow; }
+    .yellowgreen { background-color: #9acd32; }
+    .green { background-color: green; }
+    .bluegreen { background-color: #0d98ba; }
+    .blue { background-color: blue; }
+    .blueviolet { background-color: #8a2be2; }
+    .purple { background-color: purple; }
+    .redviolet { background-color: #b2114c; }
+    .white { background-color: white; }
+    .black { background-color: black; }
+    
