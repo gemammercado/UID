@@ -1,59 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Question 3</title>
-  <link rel="stylesheet" href="/static/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-</head>
-<body class="special-gothic">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title> <!-- Dynamic Title -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="special-gothic">
     <header>
-        <h1>Color Theory 101</h1>
-        <nav>
-          <a href="/home.html">Home</a>
-          <a href="/lessons.html">Lessons</a>
-          <a href="/quiz1.html">Quiz</a>
-          <a href="/mixing-game.html">Games</a>
-          <a href="#">Palette</a>
-          <a href="#">About</a>
-        </nav>
+      <h1>Color Theory 101</h1>
+      <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+        <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+        <a href="{{ url_for('mixing_game') }}">Games</a>
+        <a href="#">Palette</a>
+        <a href="#">About</a>
+      </nav>
     </header>
     <div class="content">
-        <h1>Quiz Question 3</h1>
-        <p>What class of colors is highlighted in this color wheel?</p>
+      <h1>{{ title }}</h1> <!-- Dynamic Heading -->
+      <p>What color scheme is highlighted in this color wheel (Red, Yellow, Blue)?</p>
 
-        <div class="color-wheel-wrapper">
-            <svg class="color-wheel" viewBox="0 0 200 200">
-              <g transform="translate(100,100)">
-                <path d="M0,0 L100,0 A100,100 0 0,1 86.6,50 Z" class="color-slice red highlight"/>
-                <path d="M0,0 L86.6,50 A100,100 0 0,1 50,86.6 Z" class="color-slice redorange"/>
-                <path d="M0,0 L50,86.6 A100,100 0 0,1 0,100 Z" class="color-slice orange"/>
-                <path d="M0,0 L0,100 A100,100 0 0,1 -50,86.6 Z" class="color-slice yelloworange"/>
-                <path d="M0,0 L-50,86.6 A100,100 0 0,1 -86.6,50 Z" class="color-slice yellow highlight"/>
-                <path d="M0,0 L-86.6,50 A100,100 0 0,1 -100,0 Z" class="color-slice yellowgreen"/>
-                <path d="M0,0 L-100,0 A100,100 0 0,1 -86.6,-50 Z" class="color-slice green"/>
-                <path d="M0,0 L-86.6,-50 A100,100 0 0,1 -50,-86.6 Z" class="color-slice bluegreen"/>
-                <path d="M0,0 L-50,-86.6 A100,100 0 0,1 0,-100 Z" class="color-slice blue highlight"/>
-                <path d="M0,0 L0,-100 A100,100 0 0,1 50,-86.6 Z" class="color-slice blueviolet"/>
-                <path d="M0,0 L50,-86.6 A100,100 0 0,1 86.6,-50 Z" class="color-slice purple"/>
-                <path d="M0,0 L86.6,-50 A100,100 0 0,1 100,0 Z" class="color-slice redviolet"/>
-              </g>
-              <circle cx="100" cy="100" r="30" fill="white"/>
-            </svg>
+      <div class="color-wheel-wrapper">
+        <svg class="color-wheel" viewBox="0 0 200 200">
+          <g transform="translate(100,100)">
+            <!-- Highlight Primary Triad: Red, Yellow, Blue -->
+            <path d="M0,0 L100,0 A100,100 0 0,1 86.6,50 Z" class="color-slice red highlight" />
+            <path d="M0,0 L86.6,50 A100,100 0 0,1 50,86.6 Z" class="color-slice redorange" />
+            <path d="M0,0 L50,86.6 A100,100 0 0,1 0,100 Z" class="color-slice orange" />
+            <path d="M0,0 L0,100 A100,100 0 0,1 -50,86.6 Z" class="color-slice yelloworange" />
+            <path d="M0,0 L-50,86.6 A100,100 0 0,1 -86.6,50 Z" class="color-slice yellow highlight" />
+            <path d="M0,0 L-86.6,50 A100,100 0 0,1 -100,0 Z" class="color-slice yellowgreen" />
+            <path d="M0,0 L-100,0 A100,100 0 0,1 -86.6,-50 Z" class="color-slice green" />
+            <path d="M0,0 L-86.6,-50 A100,100 0 0,1 -50,-86.6 Z" class="color-slice bluegreen" />
+            <path d="M0,0 L-50,-86.6 A100,100 0 0,1 0,-100 Z" class="color-slice blue highlight" />
+            <path d="M0,0 L0,-100 A100,100 0 0,1 50,-86.6 Z" class="color-slice blueviolet" />
+            <path d="M0,0 L50,-86.6 A100,100 0 0,1 86.6,-50 Z" class="color-slice purple" />
+            <path d="M0,0 L86.6,-50 A100,100 0 0,1 100,0 Z" class="color-slice redviolet" />
+          </g>
+          <circle cx="100" cy="100" r="30" fill="white" /> <!-- Center circle -->
+        </svg>
 
-            <div class="color-options">
-                <button class="color-choice">Complementary</button>
-                <button class="color-choice">Analogous</button>
-                <button class="color-choice">Triadic</button>
-            </div> 
-                
-            <div class="next-lesson-container special-gothic">
-                <a href="/mixing-game.html" class="next-lesson-button">Next: Color Mixing Game →</a>
-            </div>
-        </div>
+        <form method="POST" action="{{ url_for('quiz', question_id=3) }}">
+          {% if error %}
+          <p style="color: red; text-align: center;">{{ error }}</p>
+          {% endif %}
+          <div class="color-options">
+            <button type="submit" class="color-choice" name="answer" value="Complementary">Complementary
+              (Opposites)</button>
+            <button type="submit" class="color-choice" name="answer" value="Analogous">Analogous (Neighbors)</button>
+            <button type="submit" class="color-choice" name="answer" value="Triadic">Triadic (Evenly Spaced)</button>
+          </div>
+        </form>
+
+        <!-- The form POST will redirect to /results -->
+      </div>
     </div>
-</body>
+  </body>
+
 </html>

@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color in 10 Minutes</title>
-  <link rel="stylesheet" href="/static/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-</head>
-<body class="special-gothic">
 
-  <header>
-    <h1>Color Theory 101</h1>
-    <nav>
-      <a href="/home.html">Home</a>
-      <a href="/lessons.html">Lessons</a>
-      <a href="/quiz1.html">Quiz</a>
-      <a href="/mixing-game.html">Games</a>
-      <a href="#">Palette</a>
-      <a href="#">About</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Theory 101 - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  </head>
 
-  <main>
-    <img src="https://whitneymedia.org/assets/image/691943/large_pelton_1140.jpg" alt="Color Theory Example" width="350" height="500">
-    <button class="start-button special-gothic" onclick="window.location.href='/lessons.html'">Start Lesson 1</button>
-  </main>
+  <body class="special-gothic">
 
-</body>
+    <header>
+      <h1>Color Theory 101</h1>
+      <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+        <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+        <a href="{{ url_for('mixing_game') }}">Games</a>
+        <a href="#">Palette</a> <!-- Placeholder -->
+        <a href="#">About</a> <!-- Placeholder -->
+      </nav>
+    </header>
+
+    <main>
+      <img src="https://whitneymedia.org/assets/image/691943/large_pelton_1140.jpg" alt="Agnes Pelton - The Fountains"
+        width="350" height="500" style="border: 1px solid #ccc; margin-bottom: 1rem;">
+      <!-- Use a link styled as a button or a form for GET -->
+      <a href="{{ url_for('lesson', lesson_id=1) }}" class="start-button special-gothic">Start Lesson 1</a>
+    </main>
+
+    <!-- Optional Footer -->
+    <!--
+  <footer>
+      <p>© 2024 Color Theory 101</p>
+  </footer>
+  -->
+
+  </body>
+
 </html>

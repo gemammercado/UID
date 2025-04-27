@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Mixing Game</title>
-  <link rel="stylesheet" href="/static/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-</head>
-<body class="special-gothic">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="special-gothic">
     <header>
-        <h1>Color Theory 101</h1>
-        <nav>
-          <a href="/home.html">Home</a>
-          <a href="/lessons.html">Lessons</a>
-          <a href="/quiz1.html">Quiz</a>
-          <a href="/mixing-game.html">Games</a>
-          <a href="#">Palette</a>
-          <a href="#">About</a>
-        </nav>
+      <h1>Color Theory 101</h1>
+      <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+        <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+        <a href="{{ url_for('mixing_game') }}">Games</a>
+        <a href="#">Palette</a>
+        <a href="#">About</a>
+      </nav>
     </header>
     <div class="content">
-        <h1>Match the Target Color</h1>
-        <main class="mixing-game-container">
-            <section class="mix-display">
-                <div class="color-box-group">
-                  <div class="color-box target-color"></div>
-                  <p>Target</p>
-                </div>
-                <div class="color-box-group">
-                  <div class="color-box current-color"></div>
-                  <p>Your Mix</p>
-                </div>
-            </section>
-            
-            <section class="pigment-options">
-              <h2>Select Pigments</h2>
-              <div class="pigments-grid">
-                <button class="pigment red" data-color="red"></button>
-                <button class="pigment redorange" data-color="#fb3b00"></button>
-                <button class="pigment orange" data-color="orange"></button>
-                <button class="pigment yelloworange" data-color="#ffae42"></button>
-                <button class="pigment yellow" data-color="yellow"></button>
-                <button class="pigment yellowgreen" data-color="#9acd32"></button>
-                <button class="pigment green" data-color="green"></button>
-                <button class="pigment bluegreen" data-color="#0d98ba"></button>
-                <button class="pigment blue" data-color="blue"></button>
-                <button class="pigment blueviolet" data-color="#8a2be2"></button>
-                <button class="pigment purple" data-color="purple"></button>
-                <button class="pigment redviolet" data-color="#c71585"></button>
-                <button class="pigment white" data-color="white"></button>
-                <button class="pigment black" data-color="black"></button>
-              </div>
-            </section>
-        </main>
+      <h1>Match the Target Color</h1>
+      <main class="mixing-game-container">
+        <section class="mix-display">
+          <div class="color-box-group">
+            <div class="color-box target-color"></div>
+            <p>Target</p>
+          </div>
+          <div class="color-box-group">
+            <div class="color-box current-color"></div>
+            <p>Your Mix</p>
+          </div>
+        </section>
 
-        <div class="next-lesson-container special-gothic">
-            <a href="/home.html" class="next-lesson-button">Return to Home</a>
-        </div>
+        <section class="pigment-options">
+          <h2>Select Pigments</h2>
+          <p style="text-align: center;">(Click pigments to add them to 'Your Mix'. Game logic not implemented yet.)</p>
+          <div class="pigments-grid">
+            <button class="pigment red" data-color="red"></button>
+            <button class="pigment redorange" data-color="#fb3b00"></button>
+            <button class="pigment orange" data-color="orange"></button>
+            <button class="pigment yelloworange" data-color="#ffae42"></button>
+            <button class="pigment yellow" data-color="yellow"></button>
+            <button class="pigment yellowgreen" data-color="#9acd32"></button>
+            <button class="pigment green" data-color="green"></button>
+            <button class="pigment bluegreen" data-color="#0d98ba"></button>
+            <button class="pigment blue" data-color="blue"></button>
+            <button class="pigment blueviolet" data-color="#8a2be2"></button>
+            <button class="pigment purple" data-color="purple"></button>
+            <button class="pigment redviolet" data-color="#c71585"></button>
+            <button class="pigment white" data-color="white"></button>
+            <button class="pigment black" data-color="black"></button>
+          </div>
+        </section>
+      </main>
+
+      <div class="next-lesson-container special-gothic" style="text-align:center;">
+        <a href="{{ url_for('home') }}" class="next-lesson-button">Return to Home</a>
+      </div>
     </div>
-</body>
+    <!--  Add Javascript file for game logic later -->
+    <!-- <script src="{{ url_for('static', filename='game.js') }}"></script> -->
+  </body>
+
 </html>

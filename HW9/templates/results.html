@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Results</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="special-gothic">
+        <header>
+            <h1>Color Theory 101</h1>
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+                <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+                <a href="{{ url_for('mixing_game') }}">Games</a>
+                <a href="#">Palette</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Quiz Results</h1>
+            <p style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">
+                You answered {{ score }} out of {{ total_questions }} questions correctly.
+            </p>
+
+
+            <!--
+        <h2>Your Answers:</h2>
+        <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+            {# Loop through quiz_questions using its integer keys (q_id_int) #}
+            {% for q_id_int, question_data in quiz_questions.items() %}
+                {% set q_id_str = q_id_int|string %} {# Convert int key to string for user_answers lookup #}
+                {% set user_answer = user_answers.get(q_id_str, 'Not Answered') %} {# Get user answer using string key #}
+                <li>
+                    <strong>Question {{ q_id_int }}:</strong> Your answer: <em>{{ user_answer }}</em>
+                    {% if user_answer == question_data.correct_answer %}
+                        <span style="color: green;">(Correct)</span>
+                    {% elif user_answer != 'Not Answered' %}
+                        <span style="color: red;">(Incorrect, Correct was: <em>{{ question_data.correct_answer }}</em>)</span>
+                    {% else %}
+                         <span style="color: orange;">(Not Answered)</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        -->
+
+            <div class="next-lesson-container special-gothic" style="text-align: center;">
+                <!-- Center buttons on results page -->
+                <a href="{{ url_for('quiz', question_id=1) }}" class="next-lesson-button"
+                    style="margin-right: 1rem;">Try Quiz Again</a>
+                <a href="{{ url_for('mixing_game') }}" class="next-lesson-button" style="margin-right: 1rem;">Color
+                    Mixing Game →</a>
+                <a href="{{ url_for('home') }}" class="next-lesson-button">Return to Home</a>
+            </div>
+        </div>
+    </body>
+
+</html>

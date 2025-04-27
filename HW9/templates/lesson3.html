@@ -1,69 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 3: Color Schemes</title>
-  <link rel="stylesheet" href="/static/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">  
-</head>
-<body class="special-gothic">
 
-    <header>
-        <h1>Color Theory 101</h1>
-        <nav>
-          <a href="/home.html">Home</a>
-          <a href="/lessons.html">Lessons</a>
-          <a href="/quiz1.html">Quiz</a>
-          <a href="/mixing-game.html">Games</a>
-          <a href="#">Palette</a>
-          <a href="#">About</a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title> <!-- Dynamic Title -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    </head>
 
-    <h2>Lesson 3: Color Schemes</h2>
-    <div class="content">
-        <section>
-            <h2>Complementary Colors</h2>
-            <p>Complementary colors are opposite each other on the color wheel. They create high contrast when paired together.</p>
-            <img src="https://images.saatchiart.com/saatchi/985797/art/3765796/2835680-HSC00002-7.jpg" alt="Painting of oranges on blue tablecloth" class="value-scale">
-            <p class="caption">Elina Jermaka, <i>Oranges on Blue Background</i></p>
-            <div id="color-circles">
-                <div class="color primary blue"></div>
-                <div class="color secondary orange"></div>
+    <body class="special-gothic">
+
+        <header>
+            <h1>Color Theory 101</h1>
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+                <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+                <a href="{{ url_for('mixing_game') }}">Games</a>
+                <a href="#">Palette</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h2>{{ title }}</h2> <!-- Dynamic Heading -->
+
+            <section>
+                <h2>Complementary Colors</h2>
+                <p>Complementary colors are pairs of colors which, when combined or mixed, cancel each other out (lose
+                    hue) by producing a grayscale color like white or black. When placed next to each other, they create
+                    the strongest contrast for those two colors. Complementary colors are opposite each other on the
+                    color wheel.</p>
+                <img src="https://images.saatchiart.com/saatchi/985797/art/3765796/2835680-HSC00002-7.jpg"
+                    alt="Painting of oranges on blue tablecloth" class="value-scale">
+                <p class="caption">Elina Jermaka, <i>Oranges on Blue Background</i></p>
+                <div id="color-circles">
+                    <div class="color primary blue"></div>
+                    <div class="color secondary orange"></div>
+                </div>
+                <p>This painting uses the complementary pair blue and orange. Notice how the orange pops against the
+                    blue background, and the blue looks richer next to the oranges. This high contrast makes both colors
+                    appear more vibrant than if they were used alone.</p>
+            </section>
+
+            <section>
+                <h2>Analogous Colors</h2>
+                <p>Analogous colors are groups of colors that are adjacent to each other on the color wheel, such as
+                    red, orange, and red-orange. One color usually dominates, while others enrich the scheme. Analogous
+                    schemes often create a sense of harmony and calm.</p>
+                <img src="https://portlandartmuseum.org/wp-content/uploads/2024/08/Monet-Waterlillies-unframed-scaled.jpg"
+                    alt="Monet's Waterlilies" class="value-scale">
+                <p class="caption">Claude Monet, <i>Water Lilies</i> (detail)</p>
+                <div id="color-circles">
+                    <div class="color secondary purple"></div>
+                    <div class="color tertiary blue-purple"></div>
+                    <div class="color primary blue"></div>
+                    <div class="color tertiary blue-green"></div>
+                    <div class="color secondary green"></div>
+                </div>
+                <p>Monet's Water Lilies series often employs analogous color schemes. This detail shows blues, greens,
+                    and violets, colors that sit next to each other on the wheel, creating a tranquil, harmonious effect
+                    typical of Impressionism.</p>
+            </section>
+
+            <section>
+                <h2>Triadic Colors</h2>
+                <p>A triadic color scheme uses colors that are evenly spaced around the color wheel. Triadic schemes
+                    tend to be quite vibrant, even if you use pale or unsaturated versions of your hues. To use a
+                    triadic harmony successfully, the colors should be carefully balanced—let one color dominate and use
+                    the two others for accent.</p>
+                <img src="https://d7hftxdivxxvm.cloudfront.net/?height=393&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F9vtSWCOkLLXxgP8kY33WNg%2Flarger.jpg&width=445"
+                    class="value-scale">
+                <p class="caption">Louis Fratino, <i>Cato</i></p>
+                <div id="color-circles">
+                    <div class="color primary red"></div> <!-- Example Triad: Red, Yellow, Blue -->
+                    <div class="color primary yellow"></div>
+                    <div class="color primary blue"></div>
+                </div>
+                <p>While Fratino's work uses complex color mixing, the underlying structure often incorporates strong
+                    primary or secondary relationships. A classic triadic scheme involves the primary colors Red,
+                    Yellow, and Blue, offering strong visual contrast and vibrancy. Notice how different artists might
+                    choose one color to be dominant within the scheme.</p>
+            </section>
+
+            <!-- Dynamic Next Button Container -->
+            <div class="next-lesson-container special-gothic">
+                <a href="{{ next_url }}" class="next-lesson-button">{{ next_text }}</a>
             </div>
-            <p>This painting uses the complementary pair blue and orange, making both colors more vibrant than if they were standalone.</p>
-        </section>
+        </div>
 
-        <section>
-            <h2>Secondary Colors</h2>
-            <p>Secondary colors are those on the color wheel that are made directly from mixing the primary colors. Purple, for example, is made by mixing red and blue. Green is made by mixing yellow and blue.</p>
-            <img src="https://portlandartmuseum.org/wp-content/uploads/2024/08/Monet-Waterlillies-unframed-scaled.jpg" alt="Monet's Waterlilies" class="value-scale" width="700" height="700">
-            <p class="caption">Claude Monet, <i>Water Lilies</i></p>
-            <div id="color-circles">
-                <div class="color secondary purple"></div>
-                <div class="color secondary green"></div>
-            </div>
-        </section>
+    </body>
 
-        <section>
-            <h2>Tertiary Colors</h2>
-            <p>Tertiary colors are created by mixing a primary color with a secondary color on the color wheel. There are six tertiary colors: red-violet, blue-violet, blue-green, yellow-green, red-orange, and yellow-orange.</p>
-            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=393&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F9vtSWCOkLLXxgP8kY33WNg%2Flarger.jpg&width=445" class="value-scale" width="700" height="700">
-            <p class="caption">Louis Fratino, <i>Cato</i></p>
-            <div id="color-circles">
-                <div class="color tertiary blue-green"></div>
-                <div class="color tertiary yellow-green"></div>
-            </div>
-            <p>In <i>Cato</i>, Fratino mixes the secondary color green with blues and yellows to deepen or lighten the hue of the green. This is a great example of how tertiary colors can be used to create depth and dimension in a painting.</p>
-        </section>
-    </div>
-    
-    <div class="next-lesson-container special-gothic">
-        <a href="/quiz1.html" class="next-lesson-button">Next: Quiz →</a>
-    </div>
-
-</body>
 </html>

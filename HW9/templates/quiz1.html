@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Question 1</title>
-  <link rel="stylesheet" href="/static/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-</head>
-<body class="special-gothic">
-    <header>
-        <h1>Color Theory 101</h1>
-        <nav>
-          <a href="/home.html">Home</a>
-          <a href="/lessons.html">Lessons</a>
-          <a href="/quiz1.html">Quiz</a>
-          <a href="/mixing-game.html">Games</a>
-          <a href="#">Palette</a>
-          <a href="#">About</a>
-        </nav>
-    </header>
-    <div class="content">
-        <h1>Quiz Question 1</h1>
-        <p>What do we call a color mixed with <strong>white</strong>?</p>
 
-        <div class="vibrant-red"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title> <!-- Dynamic Title -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    </head>
 
-        <div class="content value-spectrum">
-            <div class="value-box value-1"></div>
-            <div class="value-box value-2"></div>
-            <div class="value-box value-3"></div>
-            <div class="value-box value-4"></div>
-            <div class="value-box value-5"></div>
-            <div class="value-box value-6"></div>
-            <div class="value-box value-7"></div>
-            <div class="value-box value-8"></div>
-            <div class="value-box value-9"></div>
+    <body class="special-gothic">
+        <header>
+            <h1>Color Theory 101</h1>
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+                <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
+                <a href="{{ url_for('mixing_game') }}">Games</a>
+                <a href="#">Palette</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h1>{{ title }}</h1> <!-- Dynamic Heading -->
+            <p>What do we call a color mixed with <strong>white</strong>?</p>
+
+            <!-- Visual Aid -->
+            <div class="vibrant-red"></div>
+            <p style="text-align: center; margin-top: -10px; margin-bottom: 10px;">Pure Color</p>
+            <div class="value-spectrum">
+                <div class="value-box value-1"></div>
+                <div class="value-box value-2"></div>
+                <div class="value-box value-3"></div>
+                <div class="value-box value-4"></div>
+                <div class="value-box value-5"></div> <!-- Approx Middle/Pure -->
+                <div class="value-box value-6"></div>
+                <div class="value-box value-7"></div>
+                <div class="value-box value-8"></div>
+                <div class="value-box value-9"></div> <!-- Lightest/Tint -->
+            </div>
+            <p style="text-align: center; font-size: 1rem; margin-top: 5px; margin-bottom: 2rem;">Value Scale: Darkest
+                (Shade) ← --- → Lightest (Tint)</p>
+
+
+            <!-- Form for submitting the answer -->
+            <form method="POST" action="{{ url_for('quiz', question_id=1) }}">
+                {% if error %}
+                <p style="color: red; text-align: center;">{{ error }}</p>
+                {% endif %}
+                <div class="color-options">
+                    <!-- Buttons submit the form when clicked -->
+                    <button type="submit" class="color-choice" name="answer" value="Tint">Tint</button>
+                    <button type="submit" class="color-choice" name="answer" value="Shade">Shade</button>
+                    <button type="submit" class="color-choice" name="answer" value="Tone">Tone</button>
+                    <!-- Tone = Color + Gray -->
+                </div>
+            </form>
+
         </div>
+    </body>
 
-        <div class="color-options">
-            <button class="color-choice">Tint</button>
-            <button class="color-choice">Shade</button>
-            <button class="color-choice">Tone</button>
-        </div>
-
-        <div class="next-lesson-container special-gothic">
-            <a href="/quiz2.html" class="next-lesson-button">Next: Question 2 →</a>
-        </div> 
-    </div>
-</body>
 </html>

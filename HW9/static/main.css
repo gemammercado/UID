@@ -1,342 +1,417 @@
 body {
-    margin: 0;
-    background: white;
-    color: #333;
-    font-size: 1.5rem;
-  }
-  
-  header {
-    padding: 1rem 2rem;
-  }
-  
-  section{ 
-    padding:20px;
-  }
-  h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: black;
+  margin: 0;
+  background: white;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+header {
+  padding: 1rem 2rem;
+}
+
+section{
+  padding:20px;
+}
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: black;
+}
+
+h2 {
+  padding-left: 0px; 
+  text-align: left; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1rem;
+}
+
+nav {
+  margin-top: 1rem;
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  padding-top: 2rem;
+  max-width: 900px; 
+  margin: 20px auto; 
+  text-align: center; 
+}
+
+.start-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Special Gothic Expanded One", sans-serif; 
+}
+
+.start-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.special-gothic {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.next-lesson-container {
+  padding: 20px 0; 
+  margin-top: 3rem;
+  text-align: right; 
   }
 
-  h2 { 
-    padding-left: 40px;
+  .next-lesson-button {
+      background-color: black;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      display: inline-block; 
+      font-family: "Special Gothic Expanded One", sans-serif; 
   }
-  
-  nav {
-    margin-top: 1rem;
-    background-color: black;
-    padding: 1rem;
+
+  .next-lesson-button:hover {
+      background-color: white;
+      color: black;
+  }
+
+  .content{
+      padding: 20px 40px 40px 40px; 
+      max-width: 900px; 
+      margin: 20px auto; 
+      border: 1px solid #eee; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+      background-color: #fff; 
+  }
+
+  .content section, .content p {
+      text-align: left;
+      margin-bottom: 1.5rem; 
+  }
+
+  .content > h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+  .content > h2 { 
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+
+
+  .content .caption {
+      font-size: 1.2rem;
+      margin-top: 0.5rem; 
+      color: #555; 
+      text-align: center; 
+      font-style: italic;
+  }
+
+  /* Center images */
+  .content img.value-scale, .content img.painting {
+      display: block;
+      margin: 1.5rem auto; 
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+  }
+  .content .image-row {
+      text-align: center;
+      margin-top: 1.5rem;
+  }
+
+
+  @media (min-width: 768px) {
+    .content .image-row {
+      display: flex;
+      gap: 2rem; 
+      align-items: flex-start;
+      text-align: left; 
+    }
+    .content .image-col {
+      flex: 1;
+      text-align: center; 
+    }
+     .content .image-col p {
+       text-align: center;
+       margin-top: 0.5rem;
+    }
+    .content .image-col img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 0.5rem auto;
+    }
+  }
+
+
+  /* COLOR CIRCLES */
+  .color {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid #333;
+    vertical-align: middle; 
+  }
+  #color-circles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 1rem; 
+      margin-bottom: 1rem;
+      text-align: center;
+  }
+
+  .color.primary.red { background-color: red; }
+  .color.primary.blue { background-color: blue; }
+  .color.primary.yellow { background-color: yellow; }
+
+  .color.secondary.green { background-color: green; }
+  .color.secondary.orange { background-color: orange; }
+  .color.secondary.purple { background-color: purple; }
+
+  .color.tertiary.red-orange { background-color: #ff5349; }
+  .color.tertiary.yellow-green { background-color: #9acd32; }
+  .color.tertiary.blue-purple { background-color: #8a2be2; }
+  .color.tertiary.blue-green { background-color: #0d98ba; }
+  .color.tertiary.red-violet { background-color: #c71585; } 
+  .color.tertiary.yellow-orange { background-color: #ffae42; } 
+
+
+  /* VALUE SPECTRUM */
+  .value-spectrum {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    gap: 6px;
   }
-  
-  nav a {
-    text-decoration: none;
+
+  .value-box {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 1px solid #ccc; 
+  }
+
+  .value-1 { background-color: #3b0000; }
+  .value-2 { background-color: #600000; }
+  .value-3 { background-color: #800000; }
+  .value-4 { background-color: #a00000; }
+  .value-5 { background-color: #c00000; }
+  .value-6 { background-color: #e00000; }
+  .value-7 { background-color: #f55a5a; }
+  .value-8 { background-color: #fca3a3; }
+  .value-9 { background-color: #ffe5e5; }
+
+  /* QUIZ STYLING */
+  .vibrant-red { 
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  /* Center quiz question text */
+  .content > p { 
+      text-align: center;
+      font-size: 1.8rem; 
+      margin-bottom: 2rem;
+  }
+
+   .content form {
+      margin-top: 2rem;
+      text-align: center;
+  }
+
+  .color-options {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .color-choice {
+    min-width: 150px; 
+    width: auto; 
+    padding: 0.8rem 1.5rem; 
+    height: auto;
+    border: 2px solid black; 
+    border-radius: 6px;
+    background-color: black;
     color: white;
     font-weight: bold;
-    font-size: 1.1rem;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2rem;
-  }
-  
-  .start-button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    background-color: black;
-    color: white;
-    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-family: "Special Gothic Expanded One", sans-serif;
   }
-  
-  .start-button:hover {
+
+  .color-choice:hover {
     background-color: white;
     color: black;
   }
-  
-  footer {
-    position: absolute;
-    bottom: 20px;
-    font-size: 0.9rem;
+
+
+
+  /* COLOR WHEEL in Quiz 3 */
+  .color-wheel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem; 
+    margin-bottom: 2rem;
   }
-  
-  .special-gothic {
-    font-family: "Special Gothic Expanded One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+
+  .color-wheel {
+    width: 400px; 
+    max-width: 90%;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 2rem;
   }
-  
-  .next-lesson-container {
-    padding: 20px;
-    margin-top: 3rem;
-    text-align: right;
-    width: 100%;
-    max-width: 800px;
-    }
 
-    .next-lesson-button {
-        background-color: black;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-        font-size: 1rem;
-    }
+  .color-slice {
+    stroke: white;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s; /* Added filter transition */
+  }
+  .color-slice:hover {
+    transform: scale(1.05); /* Slightly smaller hover effect */
+    filter: brightness(1.1); /* Brighten on hover */
+  }
+  .highlight {
+    stroke: black;
+    stroke-width: 4; /* Make highlight thicker */
+    transform-origin: center center; /* Ensure scaling originates from center */
+  }
 
-    .next-lesson-button:hover {
-        background-color: white;
-        color: black;
-    }
-
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .content{ 
-        text-align: center;
-        align-items: center;
-        padding: 40px;
-    }
-
-    .caption {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-        color: #333;
-    }
-    @media (min-width: 768px) {
-      .image-row {
-        display: flex;
-        gap: 1rem; /*adds space btwn imgs*/
-        align-items: flex-start;
-      }
-      .image-col {
-        flex: 1;
-      }
-      .image-col img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-    }
+  /* SVG Colors (ensure they match other definitions if needed) */
+  .red { fill: red; }
+  .redorange { fill: #ff5349; }
+  .orange { fill: orange; }
+  .yelloworange { fill: #ffae42; }
+  .yellow { fill: yellow; }
+  .yellowgreen { fill: #9acd32; }
+  .green { fill: green; }
+  .bluegreen { fill: #0d98ba; }
+  .blue { fill: blue; }
+  .blueviolet { fill: #8a2be2; }
+  .purple { fill: purple; }
+  .redviolet { fill: #c71585; }
 
 
-    /* COLOR CIRCLES*/
-    .color {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 10px;
-      border: 2px solid #333;
-    }
-    #color-circles {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-    }
+  /* COLOR MIXER STYLING - Basic structure from original */
+  .mixing-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
 
-    .color.primary.red { background-color: red; }
-    .color.primary.blue { background-color: blue; }
-    .color.primary.yellow { background-color: yellow; }
+  .mix-display {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Allow wrapping */
+  }
 
-    .color.secondary.green { background-color: green; }
-    .color.secondary.orange { background-color: orange; }
-    .color.secondary.purple { background-color: purple; }
+  .color-box-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .color.tertiary.yellow-green { background-color: #65c02c; }
-    .color.tertiary.blue-green { background-color: #0f715d; }
+  .color-box {
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
 
-    /* RED SPECTRUM*/
-    .value-spectrum {
-      display: flex;
-      justify-content: center; 
-      margin-top: 1rem;
-      gap: 6px; 
-    }
-  
-    .value-box {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-    }
-  
-    .value-1 { background-color: #3b0000; } 
-    .value-2 { background-color: #600000; }
-    .value-3 { background-color: #800000; }
-    .value-4 { background-color: #a00000; }
-    .value-5 { background-color: #c00000; } 
-    .value-6 { background-color: #e00000; }
-    .value-7 { background-color: #f55a5a; }
-    .value-8 { background-color: #fca3a3; }
-    .value-9 { background-color: #ffe5e5; } 
+  .target-color {
+    background-color: #cd2be2; /* Example target */
+  }
 
-    /*STYLING FOR Q1*/
-    .vibrant-red {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      border-radius: 8px;
-      margin: 20px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  .current-color {
+    background-color: white; /* Starts empty */
+  }
 
-    .color-options {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-    
-    .color-choice {
-      width: 175px;
-      height: 40px;
-      border: none;
-      border-radius: 6px;
-      background-color: black;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-size: 1rem;
-    }
-    
-    .color-choice:hover {
-      background-color: white;
-      color: black;
-    }
+  .pigment-options {
+    text-align: center;
+    margin-top: 2rem;
+  }
 
+  .pigments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Responsive grid */
+    max-width: 500px; /* Limit width of grid */
+    margin: 1rem auto 0 auto; /* Center grid */
+    gap: 1rem;
+    justify-content: center;
+  }
 
+  .pigment {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
 
-    /*COLOR WHEEL*/
-    .color-wheel-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 3rem;
-    }
-    
-    .color-wheel {
-      width: 500px;
-      height: 500px;
-      overflow: visible;
-      padding: 40px;
-    }
-    
-    .color-slice {
-      stroke: white;
-      stroke-width: 1;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .color-slice:hover {
-      transform: scale(1.1);
-    }
-    .highlight {
-      stroke: black;
-      stroke-width: 3;
-    }
-    
-    .red { fill: red; }
-    .redorange { fill: #ff5349; }
-    .orange { fill: orange; }
-    .yelloworange { fill: #ffae42; }
-    .yellow { fill: yellow; }
-    .yellowgreen { fill: #9acd32; }
-    .green { fill: green; }
-    .bluegreen { fill: #0d98ba; }
-    .blue { fill: blue; }
-    .blueviolet { fill: #8a2be2; }
-    .purple { fill: purple; }
-    .redviolet { fill: #c71585; }
-    
+  .pigment:hover {
+    transform: scale(1.1);
+  }
 
-    /*COLOR MIXER STYLING*/
-    .mixing-game-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
-    
-    .mix-display {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-bottom: 2rem;
-    }
-    
-    .color-box-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .color-box {
-      width: 150px;
-      height: 150px;
-      border: 3px solid black;
-      border-radius: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .target-color {
-      background-color: #cd2be2; 
-      color: white;
-    }
-    
-    .current-color {
-      background-color: white;
-    }
-    
-    .pigment-options {
-      text-align: center;
-    }
-    
-    .pigments-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 50px);
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    
-    .pigment {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 2px solid #333;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    
-    .pigment:hover {
-      transform: scale(1.1);
-    }
-    
-    .red { background-color: red; }
-    .redorange { background-color: #fb3b00; }
-    .orange { background-color: orange; }
-    .yelloworange { background-color: rgb(255, 196, 0); }
-    .yellow { background-color: yellow; }
-    .yellowgreen { background-color: #9acd32; }
-    .green { background-color: green; }
-    .bluegreen { background-color: #0d98ba; }
-    .blue { background-color: blue; }
-    .blueviolet { background-color: #8a2be2; }
-    .purple { background-color: purple; }
-    .redviolet { background-color: #b2114c; }
-    .white { background-color: white; }
-    .black { background-color: black; }
-    
+  /* Pigment Colors (ensure consistency) */
+  .pigment.red { background-color: red; }
+  .pigment.redorange { background-color: #fb3b00; } 
+  .pigment.orange { background-color: orange; }
+  .pigment.yelloworange { background-color: #ffae42; }
+  .pigment.yellow { background-color: yellow; }
+  .pigment.yellowgreen { background-color: #9acd32; }
+  .pigment.green { background-color: green; }
+  .pigment.bluegreen { background-color: #0d98ba; }
+  .pigment.blue { background-color: blue; }
+  .pigment.blueviolet { background-color: #8a2be2; }
+  .pigment.purple { background-color: purple; }
+  .pigment.redviolet { background-color: #c71585; } 
+  .pigment.white { background-color: white; }
+  .pigment.black { background-color: black; }
