@@ -1,417 +1,369 @@
+/* --- Base Styles & Typography --- */
 body {
   margin: 0;
-  background: white;
-  color: #333;
+  background-color: #f8f9fa; /* Base Background */
+  color: #343a40; /* Default Text (Dark Grey) */
   font-size: 1.5rem;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6; /* Base line height */
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2e00ac; /* Main Heading Color */
+  text-align: center; /* Center headings by default */
+}
+/* Specific heading sizes if needed */
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; } /* Example adjustment */
+
+p {
+  margin-bottom: 1.5rem;
+  text-align: left; /* Default paragraph alignment */
+}
+
+a {
+  color: #d2baff; /* Accent Color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #2e00ac; /* Main color on link hover */
+}
+
+/* --- Layout Elements --- */
 header {
   padding: 1rem 2rem;
-}
-
-section{
-  padding:20px;
-}
-h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: black;
-}
-
-h2 {
-  padding-left: 0px; 
-  text-align: left; 
-  margin-top: 1.5rem; 
-  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6; /* Light Grey Border */
 }
 
 nav {
   margin-top: 1rem;
-  background-color: black;
+  background-color: #2e00ac; /* Main Color Nav Background */
   padding: 1rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
 }
 
 nav a {
-  text-decoration: none;
-  color: white;
+  color: #f8f9fa; /* Light Text on Dark Nav */
   font-weight: bold;
   font-size: 1.1rem;
 }
+nav a:hover {
+  color: #e6e6fa; /* Lighter Lavender on hover */
+}
 
-main {
+main { /* Homepage Main Area */
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
-  padding-top: 2rem;
-  max-width: 900px; 
-  margin: 20px auto; 
-  text-align: center; 
+  padding: 2rem;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
 }
 
-.start-button {
-  margin-top: 2rem;
-  padding: 1rem 2rem;
+.content { /* Lesson/Quiz Content Area */
+  padding: 30px 40px 40px 40px;
+  max-width: 900px;
+  margin: 30px auto;
+  border: 1px solid #dee2e6; /* Light Grey Border */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  background-color: #ffffff; /* White Background */
+  border-radius: 8px;
+}
+
+.content section { /* Sections within Content */
+  padding: 10px 0; /* Reduced padding within sections */
+  margin-bottom: 1.5rem;
+}
+
+/* --- Buttons --- */
+.start-button,
+.next-lesson-button,
+.color-choice {
+  /* Common Button Styles */
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
   font-size: 1.1rem;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: "Special Gothic Expanded One", sans-serif; 
-}
-
-.start-button:hover {
-  background-color: white;
-  color: black;
-}
-
-.special-gothic {
+  font-weight: bold;
   font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+
+  /* Color Scheme */
+  background-color: #d2baff; /* Accent Lavender Background */
+  color: #7b26c1; /* Dark Grey Text for better contrast on Lavender */
+  border: 2px solid #d2baff; /* Accent Lavender Border */
+}
+
+.start-button:hover,
+.next-lesson-button:hover,
+.color-choice:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #d2baff; /* Accent Lavender text on hover */
+  border-color: #d2baff; /* Accent Lavender border */
 }
 
 .next-lesson-container {
-  padding: 20px 0; 
+  padding: 20px 0;
   margin-top: 3rem;
-  text-align: right; 
-  }
+  text-align: right; /* Default alignment */
+}
+.next-lesson-container[style*="text-align: center;"] { /* Override for centered containers */
+  text-align: center;
+}
 
-  .next-lesson-button {
-      background-color: black;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      font-size: 1rem;
-      display: inline-block; 
-      font-family: "Special Gothic Expanded One", sans-serif; 
-  }
+/* --- Image & Caption Styles --- */
+.content img.value-scale,
+.content img.painting,
+main img { /* Centered images */
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #dee2e6; /* Light Grey Border */
+  border-radius: 4px;
+}
 
-  .next-lesson-button:hover {
-      background-color: white;
-      color: black;
-  }
+.content .caption {
+  display: block; /* Ensure caption is block for centering */
+  font-size: 1.1rem;
+  margin-top: -0.5rem; /* Pull caption closer to image */
+  margin-bottom: 1.5rem;
+  color: #6c757d; /* Medium Grey */
+  text-align: center;
+  font-style: italic;
+}
 
-  .content{
-      padding: 20px 40px 40px 40px; 
-      max-width: 900px; 
-      margin: 20px auto; 
-      border: 1px solid #eee; 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-      background-color: #fff; 
-  }
+.content .image-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+.content .image-col {
+  flex: 1;
+  min-width: 250px; /* Prevent columns from getting too narrow */
+  text-align: center;
+}
+.content .image-col img {
+  margin-bottom: 0.5rem; /* Space between image and caption */
+}
+.content .image-col p { /* Caption inside column */
+  font-size: 1rem;
+  margin-top: 0; /* Reset top margin */
+}
 
-  .content section, .content p {
-      text-align: left;
-      margin-bottom: 1.5rem; 
-  }
+/* --- Specific Component Styles --- */
 
-  .content > h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-  }
-  .content > h2 { 
-      text-align: center;
-      margin-bottom: 2rem;
-  }
+/* Color Circles (Lessons) */
+#color-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  text-align: center;
+}
+.color {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 8px;
+  border: 3px solid #343a40; /* Dark Grey border */
+  vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* Color definitions remain the same */
+.color.primary.red { background-color: red; }
+.color.primary.blue { background-color: blue; }
+.color.primary.yellow { background-color: yellow; }
+.color.secondary.green { background-color: green; }
+.color.secondary.orange { background-color: orange; }
+.color.secondary.purple { background-color: purple; }
+.color.tertiary.red-orange { background-color: #ff5349; }
+.color.tertiary.yellow-orange { background-color: #ffae42; }
+.color.tertiary.yellow-green { background-color: #9acd32; }
+.color.tertiary.blue-green { background-color: #0d98ba; }
+.color.tertiary.blue-purple { background-color: #8a2be2; }
+.color.tertiary.red-violet { background-color: #c71585; }
 
+/* Value Spectrum (Lesson 2) */
+.value-spectrum {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
+  gap: 4px;
+  padding: 5px;
+  background-color: #f1f3f5; /* Light Grey background */
+  border: 1px solid #dee2e6; /* Light Grey border */
+  border-radius: 4px;
+  max-width: fit-content;
+}
+.value-box {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border: none;
+}
+/* Value colors remain the same */
+.value-1 { background-color: #3b0000; } .value-2 { background-color: #600000; } .value-3 { background-color: #800000; } .value-4 { background-color: #a00000; } .value-5 { background-color: #c00000; } .value-6 { background-color: #e00000; } .value-7 { background-color: #f55a5a; } .value-8 { background-color: #fca3a3; } .value-9 { background-color: #ffe5e5; }
 
-  .content .caption {
-      font-size: 1.2rem;
-      margin-top: 0.5rem; 
-      color: #555; 
-      text-align: center; 
-      font-style: italic;
-  }
+/* Quiz Elements */
+.content > p.quiz-question { /* Add class to quiz question p tags if needed, or rely on specificity */
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #343a40; /* Dark Grey for readability */
+}
+.content form {
+  margin-top: 2rem;
+  text-align: center;
+}
+.color-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+}
+.vibrant-red { /* Quiz 1 example box */
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 8px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-  /* Center images */
-  .content img.value-scale, .content img.painting {
-      display: block;
-      margin: 1.5rem auto; 
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ddd;
-  }
-  .content .image-row {
-      text-align: center;
-      margin-top: 1.5rem;
-  }
+/* Color Wheel (Quiz 3) */
+.color-wheel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+}
+.color-wheel {
+  width: 350px;
+  max-width: 80%;
+  height: auto;
+  overflow: visible;
+  margin-bottom: 2rem;
+}
+.color-slice {
+  stroke: #ffffff;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+.color-slice:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+.highlight {
+  stroke: #d2baff; /* Accent Lavender highlight */
+  stroke-width: 6;
+  transform-origin: center center;
+  /* Optional: Adjust drop shadow color */
+  filter: drop-shadow(0px 0px 4px rgba(179, 157, 219, 0.8));
+}
+/* SVG colors remain the same */
+.red { fill: red; } .redorange { fill: #ff5349; } .orange { fill: orange; } .yelloworange { fill: #ffae42; } .yellow { fill: yellow; } .yellowgreen { fill: #9acd32; } .green { fill: green; } .bluegreen { fill: #0d98ba; } .blue { fill: blue; } .blueviolet { fill: #8a2be2; } .purple { fill: purple; } .redviolet { fill: #c71585; }
 
+/* --- Color Mixing Game Styles --- */
+.mixing-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0; /* Reduced padding */
+}
+.mix-display {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.color-box-group {
+  text-align: center;
+}
+.color-box-group p {
+  font-weight: bold;
+  color: #343a40;
+  margin-top: 0.5rem;
+}
+.color-box {
+  width: 140px;
+  height: 140px;
+  border: 3px solid #343a40; /* Dark Grey border */
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.target-color { background-color: #cd2be2; } /* Example Target */
+.current-color { background-color: #ffffff; border-color: #dee2e6; }
 
-  @media (min-width: 768px) {
-    .content .image-row {
-      display: flex;
-      gap: 2rem; 
-      align-items: flex-start;
-      text-align: left; 
-    }
-    .content .image-col {
-      flex: 1;
-      text-align: center; 
-    }
-     .content .image-col p {
-       text-align: center;
-       margin-top: 0.5rem;
-    }
-    .content .image-col img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 0.5rem auto;
-    }
-  }
+.pigment-options {
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+.pigment-options h2 { color: #2e00ac; } /* Main color heading */
+.pigment-options p { color: #6c757d; }
 
+.pigments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  max-width: 600px;
+  margin: 1rem auto 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f1f3f5; /* Light Grey Background */
+  border-radius: 8px;
+  border: 1px solid #dee2e6; /* Light Grey Border */
+}
+.pigment {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.pigment:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+/* Pigment colors remain the same */
+.pigment.red { background-color: red; } .pigment.redorange { background-color: #fb3b00; } .pigment.orange { background-color: orange; } .pigment.yelloworange { background-color: #ffae42; } .pigment.yellow { background-color: yellow; } .pigment.yellowgreen { background-color: #9acd32; } .pigment.green { background-color: green; } .pigment.bluegreen { background-color: #0d98ba; } .pigment.blue { background-color: blue; } .pigment.blueviolet { background-color: #8a2be2; } .pigment.purple { background-color: purple; } .pigment.redviolet { background-color: #c71585; } .pigment.white { background-color: white; } .pigment.black { background-color: black; }
 
-  /* COLOR CIRCLES */
-  .color {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 10px;
-    border: 2px solid #333;
-    vertical-align: middle; 
-  }
-  #color-circles {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 1rem; 
-      margin-bottom: 1rem;
-      text-align: center;
-  }
-
-  .color.primary.red { background-color: red; }
-  .color.primary.blue { background-color: blue; }
-  .color.primary.yellow { background-color: yellow; }
-
-  .color.secondary.green { background-color: green; }
-  .color.secondary.orange { background-color: orange; }
-  .color.secondary.purple { background-color: purple; }
-
-  .color.tertiary.red-orange { background-color: #ff5349; }
-  .color.tertiary.yellow-green { background-color: #9acd32; }
-  .color.tertiary.blue-purple { background-color: #8a2be2; }
-  .color.tertiary.blue-green { background-color: #0d98ba; }
-  .color.tertiary.red-violet { background-color: #c71585; } 
-  .color.tertiary.yellow-orange { background-color: #ffae42; } 
-
-
-  /* VALUE SPECTRUM */
-  .value-spectrum {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    gap: 6px;
-  }
-
-  .value-box {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    border: 1px solid #ccc; 
-  }
-
-  .value-1 { background-color: #3b0000; }
-  .value-2 { background-color: #600000; }
-  .value-3 { background-color: #800000; }
-  .value-4 { background-color: #a00000; }
-  .value-5 { background-color: #c00000; }
-  .value-6 { background-color: #e00000; }
-  .value-7 { background-color: #f55a5a; }
-  .value-8 { background-color: #fca3a3; }
-  .value-9 { background-color: #ffe5e5; }
-
-  /* QUIZ STYLING */
-  .vibrant-red { 
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 8px;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  /* Center quiz question text */
-  .content > p { 
-      text-align: center;
-      font-size: 1.8rem; 
-      margin-bottom: 2rem;
-  }
-
-   .content form {
-      margin-top: 2rem;
-      text-align: center;
-  }
-
-  .color-options {
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    flex-wrap: wrap; 
-    gap: 1rem; 
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .color-choice {
-    min-width: 150px; 
-    width: auto; 
-    padding: 0.8rem 1.5rem; 
-    height: auto;
-    border: 2px solid black; 
-    border-radius: 6px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 1.1rem; /* Slightly larger font */
-    font-family: "Special Gothic Expanded One", sans-serif;
-  }
-
-  .color-choice:hover {
-    background-color: white;
-    color: black;
-  }
-
-
-
-  /* COLOR WHEEL in Quiz 3 */
-  .color-wheel-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem; 
-    margin-bottom: 2rem;
-  }
-
-  .color-wheel {
-    width: 400px; 
-    max-width: 90%;
-    height: auto;
-    overflow: visible;
-    margin-bottom: 2rem;
-  }
-
-  .color-slice {
-    stroke: white;
-    stroke-width: 1;
-    cursor: pointer;
-    transition: transform 0.2s, filter 0.2s; /* Added filter transition */
-  }
-  .color-slice:hover {
-    transform: scale(1.05); /* Slightly smaller hover effect */
-    filter: brightness(1.1); /* Brighten on hover */
-  }
-  .highlight {
-    stroke: black;
-    stroke-width: 4; /* Make highlight thicker */
-    transform-origin: center center; /* Ensure scaling originates from center */
-  }
-
-  /* SVG Colors (ensure they match other definitions if needed) */
-  .red { fill: red; }
-  .redorange { fill: #ff5349; }
-  .orange { fill: orange; }
-  .yelloworange { fill: #ffae42; }
-  .yellow { fill: yellow; }
-  .yellowgreen { fill: #9acd32; }
-  .green { fill: green; }
-  .bluegreen { fill: #0d98ba; }
-  .blue { fill: blue; }
-  .blueviolet { fill: #8a2be2; }
-  .purple { fill: purple; }
-  .redviolet { fill: #c71585; }
-
-
-  /* COLOR MIXER STYLING - Basic structure from original */
-  .mixing-game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-  }
-
-  .mix-display {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap; /* Allow wrapping */
-  }
-
-  .color-box-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .color-box {
-    width: 150px;
-    height: 150px;
-    border: 3px solid black;
-    border-radius: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .target-color {
-    background-color: #cd2be2; /* Example target */
-  }
-
-  .current-color {
-    background-color: white; /* Starts empty */
-  }
-
-  .pigment-options {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .pigments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Responsive grid */
-    max-width: 500px; /* Limit width of grid */
-    margin: 1rem auto 0 auto; /* Center grid */
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .pigment {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #333;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  .pigment:hover {
-    transform: scale(1.1);
-  }
-
-  /* Pigment Colors (ensure consistency) */
-  .pigment.red { background-color: red; }
-  .pigment.redorange { background-color: #fb3b00; } 
-  .pigment.orange { background-color: orange; }
-  .pigment.yelloworange { background-color: #ffae42; }
-  .pigment.yellow { background-color: yellow; }
-  .pigment.yellowgreen { background-color: #9acd32; }
-  .pigment.green { background-color: green; }
-  .pigment.bluegreen { background-color: #0d98ba; }
-  .pigment.blue { background-color: blue; }
-  .pigment.blueviolet { background-color: #8a2be2; }
-  .pigment.purple { background-color: purple; }
-  .pigment.redviolet { background-color: #c71585; } 
-  .pigment.white { background-color: white; }
-  .pigment.black { background-color: black; }
+/* --- Footer Placeholder --- */
+/*
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  border-top: 1px solid #dee2e6;
+}
+*/
