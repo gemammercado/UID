@@ -26,7 +26,7 @@
     </header>
 
     <div class="content">
-      <h2>{{ title }}</h2> <!-- Dynamic Heading -->
+      <h2 class = "lesson">{{ title }}</h2> <!-- Dynamic Heading -->
 
       <section>
         <h2>Nine Value Scale</h2>
@@ -44,12 +44,12 @@
               <img
                 src="https://hips.hearstapps.com/hmg-prod/images/f84ce53d-4bf4-44b3-87f7-4e545e60561c.jpeg?crop=1xw:0.795xh;0xw,0.205xh&resize=640:*"
                 alt="Rembrandt's Storm on the Sea of Galilee">
-              <p class="caption">Rembrandt, <em>The Storm on the Sea of Galilee</em></p>
+              <p class="caption">Rembrandt, <i>The Storm on the Sea of Galilee</i></p>
             </div>
             <div class="image-col">
               <img src="https://newlinesmag.com/wp-content/uploads/MicrosoftTeams-image-8.jpg" alt="Mi'raj painting">
-              <p class="caption">The Prophet Muhammad as a radiant disk during the Mi'raj. Nizami's <em>Makhzan
-                  al-Asrar</em>, ca. 15th c., Topkapı Palace Library.</p>
+              <p class="caption">The Prophet Muhammad as a radiant disk during the Mi'raj. Nizami's <i>Makhzan
+                  al-Asrar</i>, ca. 15th c., Topkapı Palace Library.</p>
             </div>
           </div>
           <p>Rembrandt's <em>Storm on the Sea of Galilee</em> painting is known for its dramatic use of lights and
@@ -90,10 +90,14 @@
             <div class="value-box value-9"></div>
           </div>
         </section>
-
-        <!-- Dynamic Next Button Container -->
-        <div class="next-lesson-container special-gothic">
-          <a href="{{ next_url }}" class="next-lesson-button">{{ next_text }}</a>
+        
+        <div class="lesson-nav-container">
+          {% if prev_url %}
+            <a href="{{ prev_url }}" class="prev-lesson-button">{{ prev_text }}</a>
+          {% endif %}
+          {% if next_url %}
+            <a href="{{ next_url }}" class="next-lesson-button">{{ next_text }}</a>
+          {% endif %}
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 /* --- Base Styles & Typography --- */
 body {
   margin: 0;
-  background-color: #f8f9fa; /* Base Background */
+  background-color: white; /* Base Background */
   color: #343a40; /* Default Text (Dark Grey) */
   font-size: 1.5rem;
   font-family: "Special Gothic Expanded One", sans-serif;
@@ -12,17 +12,28 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  color: #2e00ac; /* Main Heading Color */
+  color: #000000; /* Main Heading Color */
   text-align: center; /* Center headings by default */
 }
 /* Specific heading sizes if needed */
 h1 { font-size: 3rem; }
-h2 { font-size: 2.2rem; } /* Example adjustment */
-
+h2 { 
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: -2rem; 
+} /* Example adjustment */
+h2.lesson{
+  background-color: #f1f3f5;
+  font-size: 2.2rem;
+}
 p {
   margin-bottom: 1.5rem;
   text-align: left; /* Default paragraph alignment */
+}
+
+p.question{
+  text-align: center;
+  font-size: 1.7rem;
 }
 
 a {
@@ -43,7 +54,7 @@ header {
 
 nav {
   margin-top: 1rem;
-  background-color: #2e00ac; /* Main Color Nav Background */
+  background-color: #000000; /* Main Color Nav Background */
   padding: 1rem;
   display: flex;
   gap: 2rem;
@@ -52,12 +63,12 @@ nav {
 }
 
 nav a {
-  color: #f8f9fa; /* Light Text on Dark Nav */
+  color: #f8f9fa; 
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 nav a:hover {
-  color: #e6e6fa; /* Lighter Lavender on hover */
+  color: #bc9bfa; 
 }
 
 main { /* Homepage Main Area */
@@ -77,23 +88,22 @@ main { /* Homepage Main Area */
   margin: 30px auto;
   border: 1px solid #dee2e6; /* Light Grey Border */
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  background-color: #ffffff; /* White Background */
+  background-color: white; /* White Background */
   border-radius: 8px;
 }
 
-.content section { /* Sections within Content */
-  padding: 10px 0; /* Reduced padding within sections */
+.content section { 
   margin-bottom: 1.5rem;
 }
 
 /* --- Buttons --- */
 .start-button,
+.prev-lesson-button,
 .next-lesson-button,
 .color-choice {
-  /* Common Button Styles */
   display: inline-block;
   padding: 0.8rem 1.8rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: "Special Gothic Expanded One", sans-serif;
   text-decoration: none;
@@ -105,46 +115,62 @@ main { /* Homepage Main Area */
   margin-right: 0.5rem;
 
   /* Color Scheme */
-  background-color: #d2baff; /* Accent Lavender Background */
-  color: #7b26c1; /* Dark Grey Text for better contrast on Lavender */
-  border: 2px solid #d2baff; /* Accent Lavender Border */
+  background-color: white; 
+  color: #0a0a0a; 
+  border: 2px solid #f2f0f5; 
 }
 
 .start-button:hover,
+.prev-lesson-button:hover,
 .next-lesson-button:hover,
 .color-choice:hover {
-  background-color: #ffffff; /* White background on hover */
-  color: #d2baff; /* Accent Lavender text on hover */
-  border-color: #d2baff; /* Accent Lavender border */
+  background-color: #ffffff; /* lavender on hover */
+  color: #bc9bfa; 
+  border-color: #bc9bfa;
 }
 
-.next-lesson-container {
-  padding: 20px 0;
+.lesson-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 3rem;
-  text-align: right; /* Default alignment */
-}
-.next-lesson-container[style*="text-align: center;"] { /* Override for centered containers */
-  text-align: center;
+  padding: 20px 0;
 }
 
-/* --- Image & Caption Styles --- */
-.content img.value-scale,
-.content img.painting,
-main img { /* Centered images */
-  display: block;
-  margin: 1.5rem auto;
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #dee2e6; /* Light Grey Border */
-  border-radius: 4px;
+
+.prev-lesson-button{
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    display: inline-block; 
+    font-family: "Special Gothic Expanded One", sans-serif; 
+    text-align: left;
+
+}
+
+.next-lesson-button{
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    display: inline-block; 
+    font-family: "Special Gothic Expanded One", sans-serif; 
+    text-align: right;
 }
 
 .content .caption {
-  display: block; /* Ensure caption is block for centering */
+  display: block; 
   font-size: 1.1rem;
-  margin-top: -0.5rem; /* Pull caption closer to image */
+  margin-top: 1rem; 
   margin-bottom: 1.5rem;
-  color: #6c757d; /* Medium Grey */
+  color: #6c757d; 
   text-align: center;
   font-style: italic;
 }
@@ -154,22 +180,24 @@ main img { /* Centered images */
   gap: 2rem;
   align-items: flex-start;
   margin: 1.5rem 0;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap; /* wrap */
 }
 .content .image-col {
   flex: 1;
-  min-width: 250px; /* Prevent columns from getting too narrow */
+  min-width: 250px; 
   text-align: center;
 }
-.content .image-col img {
-  margin-bottom: 0.5rem; /* Space between image and caption */
+img {
+    width: 100%;            
+    height: auto;           
+    object-fit: contain;    
+    display: block;
 }
-.content .image-col p { /* Caption inside column */
+.content .image-col p { 
   font-size: 1rem;
-  margin-top: 0; /* Reset top margin */
+  margin-top: 0; 
 }
 
-/* --- Specific Component Styles --- */
 
 /* Color Circles (Lessons) */
 #color-circles {
@@ -191,18 +219,6 @@ main img { /* Centered images */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 /* Color definitions remain the same */
-.color.primary.red { background-color: red; }
-.color.primary.blue { background-color: blue; }
-.color.primary.yellow { background-color: yellow; }
-.color.secondary.green { background-color: green; }
-.color.secondary.orange { background-color: orange; }
-.color.secondary.purple { background-color: purple; }
-.color.tertiary.red-orange { background-color: #ff5349; }
-.color.tertiary.yellow-orange { background-color: #ffae42; }
-.color.tertiary.yellow-green { background-color: #9acd32; }
-.color.tertiary.blue-green { background-color: #0d98ba; }
-.color.tertiary.blue-purple { background-color: #8a2be2; }
-.color.tertiary.red-violet { background-color: #c71585; }
 
 /* Value Spectrum (Lesson 2) */
 .value-spectrum {
@@ -217,8 +233,8 @@ main img { /* Centered images */
   max-width: fit-content;
 }
 .value-box {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   border: none;
 }
@@ -246,8 +262,8 @@ main img { /* Centered images */
   margin: 1.5rem 0 2rem 0;
 }
 .vibrant-red { /* Quiz 1 example box */
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: red;
   border-radius: 8px;
   margin: 20px auto;
@@ -279,14 +295,29 @@ main img { /* Centered images */
   filter: brightness(1.15);
 }
 .highlight {
-  stroke: #d2baff; /* Accent Lavender highlight */
+  stroke: black; /* Accent Lavender highlight */
   stroke-width: 6;
-  transform-origin: center center;
   /* Optional: Adjust drop shadow color */
   filter: drop-shadow(0px 0px 4px rgba(179, 157, 219, 0.8));
 }
 /* SVG colors remain the same */
-.red { fill: red; } .redorange { fill: #ff5349; } .orange { fill: orange; } .yelloworange { fill: #ffae42; } .yellow { fill: yellow; } .yellowgreen { fill: #9acd32; } .green { fill: green; } .bluegreen { fill: #0d98ba; } .blue { fill: blue; } .blueviolet { fill: #8a2be2; } .purple { fill: purple; } .redviolet { fill: #c71585; }
+.red { fill: red; } .redorange { fill: #ff4400; } .orange { fill: rgb(255, 136, 0); } .yelloworange { fill: #fbb400; } .yellow { fill: yellow; } .yellowgreen { fill: #bfff00; } .green { fill: green; } .bluegreen { fill: #009678; } .blue { fill: blue; } .blueviolet { fill: #8a2be2; } .purple { fill: purple; } .redviolet { fill: #c71585; }
+
+.color.primary.red { background-color: red; }
+.color.primary.blue { background-color: blue; }
+.color.primary.yellow { background-color: yellow; }
+.color.secondary.green { background-color: green; }
+.color.secondary.orange { background-color: rgb(255, 136, 0)}
+.color.secondary.purple { background-color: purple; }
+.color.tertiary.red-orange { background-color: #ff4400; }
+.color.tertiary.yellow-orange { background-color: #fbb400; }
+.color.tertiary.yellow-green { background-color: #bfff00; }
+.color.tertiary.blue-green { background-color: #009678; }
+.color.tertiary.dark-blue-green { background-color: #053f33; }
+.color.tertiary.blue-purple { background-color: #8a2be2; }
+.color.tertiary.red-violet { background-color: #ff009d; }
+.color.tint.blue { background-color: #add8e6; }
+
 
 /* --- Color Mixing Game Styles --- */
 .mixing-game-container {
@@ -318,11 +349,10 @@ main img { /* Centered images */
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.target-color { background-color: #cd2be2; } /* Example Target */
+
 .current-color { background-color: #ffffff; border-color: #dee2e6; }
 
 .pigment-options {
-  text-align: center;
   margin-top: 2rem;
   width: 100%;
 }
@@ -330,6 +360,7 @@ main img { /* Centered images */
 .pigment-options p { color: #6c757d; }
 
 .pigments-grid {
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   max-width: 600px;
@@ -348,6 +379,7 @@ main img { /* Centered images */
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 .pigment:hover {
   transform: scale(1.1);
@@ -356,14 +388,36 @@ main img { /* Centered images */
 /* Pigment colors remain the same */
 .pigment.red { background-color: red; } .pigment.redorange { background-color: #fb3b00; } .pigment.orange { background-color: orange; } .pigment.yelloworange { background-color: #ffae42; } .pigment.yellow { background-color: yellow; } .pigment.yellowgreen { background-color: #9acd32; } .pigment.green { background-color: green; } .pigment.bluegreen { background-color: #0d98ba; } .pigment.blue { background-color: blue; } .pigment.blueviolet { background-color: #8a2be2; } .pigment.purple { background-color: purple; } .pigment.redviolet { background-color: #c71585; } .pigment.white { background-color: white; } .pigment.black { background-color: black; }
 
-/* --- Footer Placeholder --- */
-/*
-footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #6c757d;
-  border-top: 1px solid #dee2e6;
+.mixing-game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
-*/
+.control-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-top: 0.5rem;
+
+  /* Color Scheme */
+  background-color: black; 
+  color: white; 
+}
+.control-button:hover {
+  background-color: #ffffff; /* lavender on hover */
+  color: #bc9bfa; 
+  border-color: #bc9bfa;
+}
+#feedback {
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}

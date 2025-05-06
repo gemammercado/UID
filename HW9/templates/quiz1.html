@@ -25,41 +25,39 @@
         </header>
 
         <div class="content">
-            <h1>{{ title }}</h1> <!-- Dynamic Heading -->
-            <p>What do we call a color mixed with <strong>white</strong>?</p>
-
-            <!-- Visual Aid -->
-            <div class="vibrant-red"></div>
-            <p style="text-align: center; margin-top: -10px; margin-bottom: 10px;">Pure Color</p>
-            <div class="value-spectrum">
-                <div class="value-box value-1"></div>
-                <div class="value-box value-2"></div>
-                <div class="value-box value-3"></div>
-                <div class="value-box value-4"></div>
-                <div class="value-box value-5"></div> <!-- Approx Middle/Pure -->
-                <div class="value-box value-6"></div>
-                <div class="value-box value-7"></div>
-                <div class="value-box value-8"></div>
-                <div class="value-box value-9"></div> <!-- Lightest/Tint -->
-            </div>
-            <p style="text-align: center; font-size: 1rem; margin-top: 5px; margin-bottom: 2rem;">Value Scale: Darkest
-                (Shade) ← --- → Lightest (Tint)</p>
-
-
-            <!-- Form for submitting the answer -->
-            <form method="POST" action="{{ url_for('quiz', question_id=1) }}">
-                {% if error %}
-                <p style="color: red; text-align: center;">{{ error }}</p>
-                {% endif %}
-                <div class="color-options">
-                    <!-- Buttons submit the form when clicked -->
-                    <button type="submit" class="color-choice" name="answer" value="Tint">Tint</button>
-                    <button type="submit" class="color-choice" name="answer" value="Shade">Shade</button>
-                    <button type="submit" class="color-choice" name="answer" value="Tone">Tone</button>
-                    <!-- Tone = Color + Gray -->
+            <section>
+                <h1>{{ title }}</h1> <!-- Dynamic Heading -->
+                <p class = "question">What do we call a color mixed with <strong>white</strong>?</p>
+    
+                <!-- Visual Aid -->
+                <div class="vibrant-red"></div>
+                <p style="text-align: center; margin-top: -10px; margin-bottom: 10px;">Pure Color</p>
+                <div class="value-spectrum">
+                    <div class="value-box value-1"></div>
+                    <div class="value-box value-2"></div>
+                    <div class="value-box value-3"></div>
+                    <div class="value-box value-4"></div>
+                    <div class="value-box value-5"></div> <!-- Approx Middle/Pure -->
+                    <div class="value-box value-6"></div>
+                    <div class="value-box value-7"></div>
+                    <div class="value-box value-8"></div>
+                    <div class="value-box value-9"></div> <!-- Lightest/Tint -->
                 </div>
-            </form>
-
+    
+                <!-- Form for submitting the answer -->
+                <form method="POST" action="{{ url_for('quiz', question_id=1) }}">
+                    {% if error %}
+                    <p style="color: red; text-align: center;">{{ error }}</p>
+                    {% endif %}
+                    <div class="color-options">
+                        <!-- Buttons submit the form when clicked -->
+                        <button type="submit" class="color-choice" name="answer" value="Tint">Tint</button>
+                        <button type="submit" class="color-choice" name="answer" value="Shade">Shade</button>
+                        <button type="submit" class="color-choice" name="answer" value="Tone">Tone</button>
+                        <!-- Tone = Color + Gray -->
+                    </div>
+                </form>
+            </section>
         </div>
     </body>
 

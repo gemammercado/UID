@@ -24,21 +24,16 @@
         <a href="#">About</a> <!-- Placeholder -->
       </nav>
     </header>
-
-    <main>
-      <img src="https://whitneymedia.org/assets/image/691943/large_pelton_1140.jpg" alt="Agnes Pelton - The Fountains"
-        width="350" height="500" style="border: 1px solid #ccc; margin-bottom: 1rem;">
-      <!-- Use a link styled as a button or a form for GET -->
-      <a href="{{ url_for('lesson', lesson_id=1) }}" class="start-button special-gothic">Start Lesson 1</a>
-    </main>
-
-    <!-- Optional Footer -->
-    <!--
-  <footer>
-      <p>© 2024 Color Theory 101</p>
-  </footer>
-  -->
-
+    <div class = "content">
+      <main>
+        <h2>Welcome to Color Theory 101</h2>
+        <img src="https://whitneymedia.org/assets/image/691943/large_pelton_1140.jpg" alt="Agnes Pelton - Ahmi in Egypt"
+             style = "margin-top: -2rem; margin-bottom: -3rem;">
+          <p class = "caption"> Agnes Pelton, <i>Ahmi in Egypt</i></p>
+        <!-- Use a link styled as a button or a form for GET -->
+        <a href="{{ url_for('lesson', lesson_id=1) }}" class="start-button special-gothic">Start Lesson 1</a>
+      </main>
+    </div>
   </body>
 
 </html>

@@ -26,7 +26,7 @@
         </header>
 
         <div class="content">
-            <h2>{{ title }}</h2> <!-- Dynamic Heading -->
+            <h2 class = "lesson">{{ title }}</h2> <!-- Dynamic Heading -->
 
             <section>
                 <h2>Complementary Colors</h2>
@@ -35,8 +35,9 @@
                     the strongest contrast for those two colors. Complementary colors are opposite each other on the
                     color wheel.</p>
                 <img src="https://images.saatchiart.com/saatchi/985797/art/3765796/2835680-HSC00002-7.jpg"
-                    alt="Painting of oranges on blue tablecloth" class="value-scale">
+                    alt="Painting of oranges on blue tablecloth">
                 <p class="caption">Elina Jermaka, <i>Oranges on Blue Background</i></p>
+                
                 <div id="color-circles">
                     <div class="color primary blue"></div>
                     <div class="color secondary orange"></div>
@@ -52,7 +53,7 @@
                     red, orange, and red-orange. One color usually dominates, while others enrich the scheme. Analogous
                     schemes often create a sense of harmony and calm.</p>
                 <img src="https://portlandartmuseum.org/wp-content/uploads/2024/08/Monet-Waterlillies-unframed-scaled.jpg"
-                    alt="Monet's Waterlilies" class="value-scale">
+                    alt="Monet's Waterlilies">
                 <p class="caption">Claude Monet, <i>Water Lilies</i> (detail)</p>
                 <div id="color-circles">
                     <div class="color secondary purple"></div>
@@ -72,13 +73,12 @@
                     tend to be quite vibrant, even if you use pale or unsaturated versions of your hues. To use a
                     triadic harmony successfully, the colors should be carefully balanced—let one color dominate and use
                     the two others for accent.</p>
-                <img src="https://d7hftxdivxxvm.cloudfront.net/?height=393&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F9vtSWCOkLLXxgP8kY33WNg%2Flarger.jpg&width=445"
-                    class="value-scale">
+                <img src="https://d7hftxdivxxvm.cloudfront.net/?height=393&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F9vtSWCOkLLXxgP8kY33WNg%2Flarger.jpg&width=445">
                 <p class="caption">Louis Fratino, <i>Cato</i></p>
                 <div id="color-circles">
-                    <div class="color primary red"></div> <!-- Example Triad: Red, Yellow, Blue -->
-                    <div class="color primary yellow"></div>
-                    <div class="color primary blue"></div>
+                    <div class="color secondary green"></div> <!-- Example Triad: Red, Yellow, Blue -->
+                    <div class="color tertiary dark-blue-green"></div>
+                    <div class="color tint blue"></div>
                 </div>
                 <p>While Fratino's work uses complex color mixing, the underlying structure often incorporates strong
                     primary or secondary relationships. A classic triadic scheme involves the primary colors Red,
@@ -86,10 +86,14 @@
                     choose one color to be dominant within the scheme.</p>
             </section>
 
-            <!-- Dynamic Next Button Container -->
-            <div class="next-lesson-container special-gothic">
-                <a href="{{ next_url }}" class="next-lesson-button">{{ next_text }}</a>
-            </div>
+            <div class="lesson-nav-container">
+                {% if prev_url %}
+                  <a href="{{ prev_url }}" class="prev-lesson-button">{{ prev_text }}</a>
+                {% endif %}
+                {% if next_url %}
+                  <a href="{{ next_url }}" class="next-lesson-button">{{ next_text }}</a>
+                {% endif %}
+              </div>
         </div>
 
     </body>

@@ -32,39 +32,42 @@
             <p>Target</p>
           </div>
           <div class="color-box-group">
-            <div class="color-box current-color"></div>
+            <div class="color-box current-color" id="mix-target"></div>
             <p>Your Mix</p>
           </div>
         </section>
 
+        <p id = "feedback"></p>
+
         <section class="pigment-options">
-          <h2>Select Pigments</h2>
-          <p style="text-align: center;">(Click pigments to add them to 'Your Mix'. Game logic not implemented yet.)</p>
+          <p style="text-align: center;">Drag pigments to 'Your Mix'.</p>
           <div class="pigments-grid">
-            <button class="pigment red" data-color="red"></button>
-            <button class="pigment redorange" data-color="#fb3b00"></button>
-            <button class="pigment orange" data-color="orange"></button>
-            <button class="pigment yelloworange" data-color="#ffae42"></button>
-            <button class="pigment yellow" data-color="yellow"></button>
-            <button class="pigment yellowgreen" data-color="#9acd32"></button>
-            <button class="pigment green" data-color="green"></button>
-            <button class="pigment bluegreen" data-color="#0d98ba"></button>
-            <button class="pigment blue" data-color="blue"></button>
-            <button class="pigment blueviolet" data-color="#8a2be2"></button>
-            <button class="pigment purple" data-color="purple"></button>
-            <button class="pigment redviolet" data-color="#c71585"></button>
-            <button class="pigment white" data-color="white"></button>
-            <button class="pigment black" data-color="black"></button>
+            <button class="pigment red" data-color="red" draggable="true"></button>
+            <button class="pigment redorange" data-color="#ff4400" draggable="true"></button>
+            <button class="pigment orange" data-color="orange" draggable="true"></button>
+            <button class="pigment yelloworange" data-color="#fbb400" draggable="true"></button>
+            <button class="pigment yellow" data-color="yellow" draggable="true"></button>
+            <button class="pigment yellowgreen" data-color="#bfff00" draggable="true"></button>
+            <button class="pigment green" data-color="green" draggable="true"></button>
+            <button class="pigment bluegreen" data-color="#009678" draggable="true"></button>
+            <button class="pigment blue" data-color="blue" draggable="true"></button>
+            <button class="pigment blueviolet" data-color="#8a2be2" draggable="true"></button>
+            <button class="pigment purple" data-color="purple" draggable="true"></button>
+            <button class="pigment redviolet" data-color="#c71585" draggable="true"></button>
+            <button class="pigment white" data-color="white" draggable="true"></button>
+            <button class="pigment black" data-color="black" draggable="true"></button>
           </div>
         </section>
       </main>
 
-      <div class="next-lesson-container special-gothic" style="text-align:center;">
-        <a href="{{ url_for('home') }}" class="next-lesson-button">Return to Home</a>
+      <div class="mixing-game-controls">
+        <button id="clear-mix" class="control-button">Clear</button>
+        <button id="submit-mix" class="control-button">Submit</button>
+        <button id="new-mix" class="control-button">New Target</button>
       </div>
+
     </div>
-    <!--  Add Javascript file for game logic later -->
-    <!-- <script src="{{ url_for('static', filename='game.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
   </body>
 
 </html>

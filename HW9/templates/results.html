@@ -26,7 +26,7 @@
         <div class="content">
             <h1>Quiz Results</h1>
             <p style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">
-                You answered {{ score }} out of {{ total_questions }} questions correctly.
+                You answered <strong>{{ score }} </strong> out of <strong>{{ total_questions }}</strong> questions correctly.
             </p>
 
 
@@ -54,10 +54,10 @@
             <div class="next-lesson-container special-gothic" style="text-align: center;">
                 <!-- Center buttons on results page -->
                 <a href="{{ url_for('quiz', question_id=1) }}" class="next-lesson-button"
-                    style="margin-right: 1rem;">Try Quiz Again</a>
-                <a href="{{ url_for('mixing_game') }}" class="next-lesson-button" style="margin-right: 1rem;">Color
-                    Mixing Game →</a>
-                <a href="{{ url_for('home') }}" class="next-lesson-button">Return to Home</a>
+                    style="margin-right: 0.75rem; font-size: 1.2rem;">Retry Quiz</a>
+                <a href="{{ url_for('mixing_game') }}" class="next-lesson-button" style="margin-right: 0.75rem; font-size: 1.2rem;"> Color
+                    Mixing Game</a>
+                <a href="{{ url_for('home') }}" class="next-lesson-button" style="margin-right: 0.75rem; font-size: 1.2rem;">Return to Home</a>
             </div>
         </div>
     </body>

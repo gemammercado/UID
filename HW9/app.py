@@ -1,9 +1,10 @@
 import os
+import random
 from datetime import datetime
 from flask import (
     Flask,
     render_template,
-    send_from_directory,
+    jsonify,
     request,
     redirect,
     url_for,
@@ -80,9 +81,19 @@ def lesson(lesson_id):
     else:
         next_url = url_for("quiz", question_id=1)
         next_text = "Next: Quiz →"
+    
+    if lesson_id > 1:
+        prev_id = lesson_id - 1
+        prev_url = url_for("lesson", lesson_id=prev_id)
+        prev_text = f"← Previous: Lesson {prev_id}"
+    else:
+        prev_url = url_for("home")
+        prev_text = "← Home"
 
     return render_template(
         lesson_info["template"],
+        prev_url=prev_url,
+        prev_text=prev_text, 
         next_url=next_url,
         next_text=next_text,
         title=lesson_info["title"],
@@ -235,6 +246,15 @@ def quiz2_redirect():
 @app.route("/quiz3.html")
 def quiz3_redirect():
     return redirect(url_for("quiz", question_id=3))
+
+@app.route('/new-target-color')
+def new_target_color():
+    # Example: Random greenish RGB
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    hex_color = f'#{r:02x}{g:02x}{b:02x}'
+    return jsonify({'color': hex_color})
 
 
 if __name__ == "__main__":
