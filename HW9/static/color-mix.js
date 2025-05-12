@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
       e.dataTransfer.setData("text/plain", color);
     });
 
+    pigment.addEventListener("dblclick", () => {
+
+      const color = pigment.dataset.color?.toLowerCase();
+      
+      const primaryColors = ["red", "blue", "yellow", "rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)"];
+      if (color && primaryColors.includes(color)) return;
+
+
+      pigment.style.backgroundColor = "transparent";
+      delete pigment.dataset.color;
+    });
+
     pigment.addEventListener("dragover", e => e.preventDefault());
 
     pigment.addEventListener("drop", e => {
@@ -39,6 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dropping pigment onto color wheel slice
   wheelSlices.forEach(slice => {
+
+    slice.addEventListener("dblclick", () => {
+      slice.style.fill = "white";
+    });
+
     slice.addEventListener("dragover", e => e.preventDefault());
     slice.addEventListener("drop", e => {
       e.preventDefault();
@@ -61,6 +78,29 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   function mixColors(color1, color2) {
+    const normalized1 = normalizeColorName(color1);
+    const normalized2 = normalizeColorName(color2);
+    console.log("Normalized color 1:", normalized1);
+    console.log("Normalized color 2:", normalized2);
+
+    //blue and yellow make green
+    if ((normalized1 === '#ffff00' && normalized2 === '#0000ff') ||
+       (normalized1 === '#0000ff' && normalized2 === '#ffff00')) {
+        console.log("Blue and yellow mixed");
+        return 'rgb(0, 128, 0)'; // or any green you prefer
+    }
+
+    //blue and red make violet
+    if((normalized1 === '#ff0000' && normalized2 === '#0000ff') ||
+    (normalized1 === '#0000ff' && normalized2 === '#ff0000')){
+      return 'rgb(128, 0, 128)'; 
+    }
+
+    if((normalized1 === '#0000ff' && normalized2 === '#008000') ||
+    (normalized1 === '#008000' && normalized2 === '#0000ff')){
+      return 'rgb(0,150,120)'; 
+    }
+
     const rgb1 = parseColor(color1);
     const rgb2 = parseColor(color2);
   
@@ -104,7 +144,7 @@ function hslToRgb(h, s, l) {
 
   let r, g, b;
   if (s === 0) {
-    r = g = b = l; // gray
+    r = g = b = l; 
   } else {
     const hue2rgb = (p, q, t) => {
       if (t < 0) t += 1;
@@ -129,12 +169,18 @@ function hslToRgb(h, s, l) {
 function mixHue(h1, h2) {
   const diff = Math.abs(h1 - h2);
   if (diff > 180) {
-    // Crosses 0°
     const avg = (h1 + h2 + 360) / 2;
     return avg % 360;
   } else {
     return (h1 + h2) / 2;
   }
 }
+
+function normalizeColorName(color) {
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.fillStyle = color;
+  return ctx.fillStyle.toLowerCase(); 
+}
+
 
 
