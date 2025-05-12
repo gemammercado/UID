@@ -17,11 +17,15 @@
       <h1>Color Theory 101</h1>
       <nav>
         <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+          <div class="dropdown">
+            <a href="#">Lessons</a>
+            <div class="dropdown-content">
+              <a href="{{ url_for('lesson', lesson_id=1) }}">Basics</a>
+              <a href="{{ url_for('color_mix_lesson') }}">Color Mixing</a>
+            </div>
+          </div>          
         <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
         <a href="{{ url_for('mixing_game') }}">Games</a>
-        <a href="#">Palette</a>
-        <a href="#">About</a>
       </nav>
     </header>
 
@@ -52,32 +56,22 @@
                   al-Asrar</i>, ca. 15th c., Topkapı Palace Library.</p>
             </div>
           </div>
-          <p>Rembrandt's <em>Storm on the Sea of Galilee</em> painting is known for its dramatic use of lights and
-            shadows
-            (chiaroscuro). The lightest values, on the left hand side of the painting, draw the viewer's eye towards the
-            disciples at the front of the ship. Jesus's face is painted in a light color, breaking apart the darkness
-            that
-            engulfs the right side of the piece.</p>
-          <p>On the right, we see an example of the flat style of early Islamic art, where the figures are often painted
-            in single, solid colors, making the scene appear more two-dimensional compared to the Rembrandt. Here, the
-            focus is often more on color harmony, pattern, and symbolic representation rather than realistic depth
-            through
-            value.</p>
+          <p> In Rembrandt's <em>Storm on the Sea of Galilee</em>, the lightest values, on the left, draw the viewer's eye towards the
+            disciples at the front of the ship.</p>
+          <p>On the right, we see an example of the flat style of early Islamic art, where the figures are painted
+            in solid colors, making the scene appear two-dimensional.</p>
         </section>
 
         <section>
           <h2>Shade vs. Tint</h2>
           <p><strong>Shade</strong> is created when black is added to a color, making it darker. Think of stepping into
             the shade on a sunny day - colors appear darker.</p>
-          <p><strong>Tint</strong> is created by adding white to a color, making it lighter. Think of adding a tint of
-            white paint to red to make pink.</p>
+          <p><strong>Tint</strong> is created by adding white to a color, making it lighter.</p>
         </section>
 
         <section>
           <h2>Example Value Spectrum: Red</h2>
-          <p>Below is an example value spectrum for the color red. It ranges from a very dark red (Maroon, a shade -
-            Level
-            1) to a very light red (Pink, a tint - Level 9), with pure red likely somewhere in the middle.</p>
+          <p>Below is an example value spectrum for the color red. It ranges from maroon, level 1, to a light pink, level 9, with pure red in the middle.</p>
           <div class="value-spectrum">
             <div class="value-box value-1"></div>
             <div class="value-box value-2"></div>
@@ -90,6 +84,17 @@
             <div class="value-box value-9"></div>
           </div>
         </section>
+
+        <section>
+          <h2>Try It Yourself</h2>
+          <p>Use the slider to add white (tint) or black (shade) to the base color shown below.</p>
+          <div class="tint-shade-demo">
+            <div id="color-preview" class="color-box"></div>
+            <input type="range" id="shade-tint-slider" min="-100" max="100" value="0" />
+            <p id="slider-label">No tint or shade applied.</p>
+          </div>
+        </section>
+        
         
         <div class="lesson-nav-container">
           {% if prev_url %}
@@ -100,7 +105,7 @@
           {% endif %}
         </div>
     </div>
-
+    <script src="{{ url_for('static', filename='tint-shade.js') }}"></script>
   </body>
 
 </html>

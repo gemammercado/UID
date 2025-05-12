@@ -16,20 +16,25 @@
             <h1>Color Theory 101</h1>
             <nav>
                 <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+                  <div class="dropdown">
+                    <a href="#">Lessons</a>
+                    <div class="dropdown-content">
+                      <a href="{{ url_for('lesson', lesson_id=1) }}">Basics</a>
+                      <a href="{{ url_for('color_mix_lesson') }}">Color Mixing</a>
+                    </div>
+                  </div>          
                 <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
                 <a href="{{ url_for('mixing_game') }}">Games</a>
-                <a href="#">Palette</a>
-                <a href="#">About</a>
-            </nav>
+              </nav>
         </header>
         <div class="content">
             <h1>{{ title }}</h1> <!-- Dynamic Heading -->
             <p class = "question">Look at the painting below. What kind of color scheme was used here?</p>
 
             <div>
-                <img src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/437127/796089/restricted"
-                    alt="Color Scheme Painting" class="painting">
+                <img src="https://artlogic-res.cloudinary.com/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/guyhepner/images/view/82ed2fe81056c7a951e954cf9bd212d9p/guyhepner-andy-warhol-dollar-sign-f.s.-ii-279-green-black-and-red-1982.png"
+                    alt="Red and green print of a dollar sign." class="painting">
+                <p class="caption">Andy Warhol, <i>Dollar Sign</i></p>
             </div>
 
             <form method="POST" action="{{ url_for('quiz', question_id=2) }}">

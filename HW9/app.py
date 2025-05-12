@@ -232,6 +232,9 @@ def mixing_game():
 def lessons_redirect():
     return redirect(url_for("lesson", lesson_id=1))
 
+@app.route('/lesson/color-mixing')
+def color_mix_lesson():
+    return render_template("color-mix-lesson.html", title="Color Mixing Lesson")
 
 @app.route("/quiz1.html")
 def quiz1_redirect():

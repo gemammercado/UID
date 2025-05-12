@@ -17,12 +17,16 @@
             <h1>Color Theory 101</h1>
             <nav>
                 <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a>
+                  <div class="dropdown">
+                    <a href="#">Lessons</a>
+                    <div class="dropdown-content">
+                      <a href="{{ url_for('lesson', lesson_id=1) }}">Basics</a>
+                      <a href="{{ url_for('color_mix_lesson') }}">Color Mixing</a>
+                    </div>
+                  </div>          
                 <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
                 <a href="{{ url_for('mixing_game') }}">Games</a>
-                <a href="#">Palette</a>
-                <a href="#">About</a>
-            </nav>
+              </nav>
         </header>
 
         <div class="content">
@@ -30,31 +34,36 @@
 
             <section>
                 <h2>Complementary Colors</h2>
-                <p>Complementary colors are pairs of colors which, when combined or mixed, cancel each other out (lose
-                    hue) by producing a grayscale color like white or black. When placed next to each other, they create
-                    the strongest contrast for those two colors. Complementary colors are opposite each other on the
-                    color wheel.</p>
-                <img src="https://images.saatchiart.com/saatchi/985797/art/3765796/2835680-HSC00002-7.jpg"
-                    alt="Painting of oranges on blue tablecloth">
+                <p> Complementary colors are pairs of colors which, when placed next to each other, they create the strongest contrast. 
+                    They are opposite each other on the color wheel.
+                  </p>
+
+                <div class="image-hover-wrapper">
+                    <img src="https://images.saatchiart.com/saatchi/985797/art/3765796/2835680-HSC00002-7.jpg"
+                        alt="Painting of oranges on blue tablecloth" class="base-image">
+                    <img src="{{ url_for('static', filename='oranges-blue.jpg') }}" alt="Blue emphasized"
+                        class="hover-image hover-blue">
+                    <img src="{{ url_for('static', filename='oranges-orange.jpg') }}" alt="Orange emphasized"
+                        class="hover-image hover-orange">
+                </div>
+                      
                 <p class="caption">Elina Jermaka, <i>Oranges on Blue Background</i></p>
                 
                 <div id="color-circles">
-                    <div class="color primary blue"></div>
-                    <div class="color secondary orange"></div>
+                    <div class="color primary blue" id="hover-blue"></div>
+                    <div class="color secondary orange" id="hover-orange"></div>
                 </div>
                 <p>This painting uses the complementary pair blue and orange. Notice how the orange pops against the
-                    blue background, and the blue looks richer next to the oranges. This high contrast makes both colors
-                    appear more vibrant than if they were used alone.</p>
+                    blue background, and the blue looks richer next to the oranges. <strong>Hover over the colored circles and see this for yourself.</strong></p>
             </section>
 
             <section>
                 <h2>Analogous Colors</h2>
                 <p>Analogous colors are groups of colors that are adjacent to each other on the color wheel, such as
-                    red, orange, and red-orange. One color usually dominates, while others enrich the scheme. Analogous
-                    schemes often create a sense of harmony and calm.</p>
+                    red, orange, and red-orange. One color usually dominates, while others enrich the scheme.</p>
                 <img src="https://portlandartmuseum.org/wp-content/uploads/2024/08/Monet-Waterlillies-unframed-scaled.jpg"
                     alt="Monet's Waterlilies">
-                <p class="caption">Claude Monet, <i>Water Lilies</i> (detail)</p>
+                <p class="caption">Claude Monet, <i>Water Lilies</i></p>
                 <div id="color-circles">
                     <div class="color secondary purple"></div>
                     <div class="color tertiary blue-purple"></div>
@@ -63,8 +72,7 @@
                     <div class="color secondary green"></div>
                 </div>
                 <p>Monet's Water Lilies series often employs analogous color schemes. This detail shows blues, greens,
-                    and violets, colors that sit next to each other on the wheel, creating a tranquil, harmonious effect
-                    typical of Impressionism.</p>
+                    and violets, colors that sit next to each other on the wheel, creating harmony.</p>
             </section>
 
             <section>
@@ -73,17 +81,16 @@
                     tend to be quite vibrant, even if you use pale or unsaturated versions of your hues. To use a
                     triadic harmony successfully, the colors should be carefully balanced—let one color dominate and use
                     the two others for accent.</p>
-                <img src="https://d7hftxdivxxvm.cloudfront.net/?height=393&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F9vtSWCOkLLXxgP8kY33WNg%2Flarger.jpg&width=445">
-                <p class="caption">Louis Fratino, <i>Cato</i></p>
+                <img src="https://usercontent.one/wp/magazine.artland.com/wp-content/uploads/2021/10/Broadway-Boogie-Woogie.jpeg?media=1690186145">
+                <p class="caption">Piet Mondrian, <i>Broadway Boogie Woogie</i></p>
                 <div id="color-circles">
-                    <div class="color secondary green"></div> <!-- Example Triad: Red, Yellow, Blue -->
-                    <div class="color tertiary dark-blue-green"></div>
-                    <div class="color tint blue"></div>
+                    <div class="color primary red"></div> <!-- Example Triad: Red, Yellow, Blue -->
+                    <div class="color primary yellow"></div>
+                    <div class="color primary blue"></div>
                 </div>
-                <p>While Fratino's work uses complex color mixing, the underlying structure often incorporates strong
-                    primary or secondary relationships. A classic triadic scheme involves the primary colors Red,
-                    Yellow, and Blue, offering strong visual contrast and vibrancy. Notice how different artists might
-                    choose one color to be dominant within the scheme.</p>
+                <p>In this painting, Mondrian uses a triadic color scheme of red, yellow, and blue. The dominant color 
+                    is yellow, taking up the most real estate in the painting, while red and blue are used as accents.
+                </p>
             </section>
 
             <div class="lesson-nav-container">
@@ -95,7 +102,7 @@
                 {% endif %}
               </div>
         </div>
-
+        <script src="{{ url_for('static', filename='lesson3.js') }}"></script>       
     </body>
 
 </html>

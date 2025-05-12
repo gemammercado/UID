@@ -17,12 +17,16 @@
             <h1>Color Theory 101</h1>
             <nav>
                 <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('lesson', lesson_id=1) }}">Lessons</a> <!-- Link to first lesson -->
-                <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a> <!-- Link to first quiz Q -->
+                  <div class="dropdown">
+                    <a href="#">Lessons</a>
+                    <div class="dropdown-content">
+                      <a href="{{ url_for('lesson', lesson_id=1) }}">Basics</a>
+                      <a href="{{ url_for('color_mix_lesson') }}">Color Mixing</a>
+                    </div>
+                  </div>          
+                <a href="{{ url_for('quiz', question_id=1) }}">Quiz</a>
                 <a href="{{ url_for('mixing_game') }}">Games</a>
-                <a href="#">Palette</a> <!-- Placeholder -->
-                <a href="#">About</a> <!-- Placeholder -->
-            </nav>
+              </nav>
         </header>
 
         <div class="content">
@@ -30,7 +34,10 @@
         
             <section>
                 <h2>Primary Colors</h2>
-                <p>Primary colors are the foundation of all other colors. These are red, blue, and yellow. They cannot
+                <p>Primary colors are the foundation of all other colors. These are 
+                    <span style="color: red;">red</span>, 
+                    <span style="color: blue;">blue</span>, and 
+                    <span style="color: yellow; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">yellow</span>. They cannot
                     be made by mixing other colors.</p>
                     <div class="color-wheel-wrapper">
                         <svg class="color-wheel" viewBox="0 0 200 200">
@@ -61,8 +68,19 @@
 
             <section>
                 <h2>Secondary Colors</h2>
-                <p>Secondary colors are created by mixing two primary colors. These include green (blue + yellow),
-                    orange (red + yellow), and purple (red + blue).</p>
+                <p>
+                    Secondary colors are created by mixing two primary colors. These include 
+                    <span style="color: green;">green</span> (
+                    <span style="color: blue;">blue</span> + 
+                    <span style="color: yellow; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">yellow</span>),
+                    <span style="color: orange;">orange</span> (
+                    <span style="color: red;">red</span> + 
+                    <span style="color: yellow; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">yellow</span>), and 
+                    <span style="color: purple;">purple</span> (
+                    <span style="color: red;">red</span>+ 
+                    <span style="color: blue;">blue</span>).
+                  </p>
+                  
                 
                 <div class="color-wheel-wrapper">
                     <svg class="color-wheel" viewBox="0 0 200 200">
@@ -95,7 +113,10 @@
             <section>
                 <h2>Tertiary Colors</h2>
                 <p>Tertiary colors are made by mixing a primary color with a neighboring secondary color. Examples
-                    include red-orange, yellow-green, and blue-purple.</p>
+                    include 
+                    <span style="color: #ff4400;">red-orange</span>, 
+                    <span style="color: #bfff00; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">yellow-green</span>, and 
+                    <span style="color: #8a2be2;">blue-purple</span>.</p>
                 
                 <div class="color-wheel-wrapper">
                     <svg class="color-wheel" viewBox="0 0 200 200">
